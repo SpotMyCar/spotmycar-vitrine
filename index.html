@@ -47,7 +47,7 @@
                         },
                         scroll: {
                             '0%': { transform: 'translateX(0)' },
-                            '100%': { transform: 'translateX(-50%)' }, /* Défilement de la moitié (car dupliqué) */
+                            '100%': { transform: 'translateX(-50%)' }, /* -50% because you duplicated the list */
                         },
                         dash: {
                             to: {
@@ -134,12 +134,15 @@
         }
         
         .ticker-wrapper {
-            display: inline-block;
+            display: flex;              /* important for a continuous track */
+            width: max-content;         /* shrink-wrap content */
             white-space: nowrap;
-            animation: scroll 60s linear infinite; /* Plus lent pour la lisibilité */
+            will-change: transform;
+            animation: scroll 60s linear infinite;
         }
         
         .ticker-item {
+            flex: 0 0 auto;             /* prevent flex from resizing items */
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
