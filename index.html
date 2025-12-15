@@ -527,7 +527,7 @@
         </div>
     </section>
 
-    <!-- WAITLIST / CONTACT -->
+    <!-- WAITLIST / CONTACT (Formspree Integration - Update ID Here) -->
     <section id="waitlist" class="py-24 bg-light">
         <div class="container mx-auto px-6">
             <div class="bg-midnight rounded-3xl p-8 md:p-16 text-center relative overflow-hidden shadow-2xl">
@@ -542,8 +542,23 @@
                         Nous finalisons le développement. Inscrivez-vous pour être prioritaire lors du lancement officiel et bénéficier d'un tarif préférentiel à vie.
                     </p>
                     
-                    <form class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto" onsubmit="event.preventDefault(); alert('Merci ! Votre inscription est bien notée.');">
-                        <input type="email" required placeholder="Votre email pro" class="px-6 py-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-signal focus:ring-1 focus:ring-signal w-full text-base" aria-label="Email professionnel">
+                    <!-- FORMULAIRE FORMSPREE -->
+                    <form 
+                        action="https://formspree.io/f/xjkndgry" 
+                        method="POST" 
+                        class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto"
+                    >
+                        <input 
+                            type="email" 
+                            name="email" 
+                            required 
+                            placeholder="Votre email pro" 
+                            class="px-6 py-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-signal focus:ring-1 focus:ring-signal w-full text-base" 
+                            aria-label="Email professionnel"
+                        >
+                        <!-- Honeypot -->
+                        <input type="text" name="_gotcha" style="display:none">
+
                         <button type="submit" class="px-8 py-4 bg-signal hover:bg-signalHover text-midnight font-bold rounded-lg transition-all shadow-lg hover:shadow-xl whitespace-nowrap text-base">
                             M'inscrire
                         </button>
