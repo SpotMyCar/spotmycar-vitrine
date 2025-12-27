@@ -16,10 +16,107 @@
 
     <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./assets/js/tailwind.config.js"></script>
+    
+    <!-- Configuration Tailwind CORRIGÉE -->
+    <script>
+        window.tailwind = window.tailwind || {};
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                // Vos couleurs de marque
+                midnight: "#0A192F",
+                midnightLight: "#112240",
+                signal: "#00E676",
+                signalHover: "#00C853",
+                light: "#F8FAFC", 
+                // RESTAURATION DE lightSlate (Indispensable pour vos textes)
+                lightSlate: "#A8B2D1", 
+              },
+              fontFamily: {
+                sans: ["Inter", "sans-serif"],
+                display: ["Montserrat", "sans-serif"]
+              },
+              animation: {
+                float: "float 6s ease-in-out infinite",
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'spin-slow': 'spin 8s linear infinite',
+              },
+              keyframes: {
+                float: {
+                  "0%, 100%": { transform: "translateY(0)" },
+                  "50%": { transform: "translateY(-20px)" }
+                }
+              }
+            }
+          }
+        };
+    </script>
 
-    <!-- Project CSS -->
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <!-- Styles CSS -->
+    <style>
+        /* Ticker Animation */
+        .ticker-container {
+          width: 100%;
+          overflow: hidden;
+          white-space: nowrap;
+          position: relative;
+        }
+
+        .ticker-wrapper {
+          display: inline-flex;
+          align-items: center;
+          white-space: nowrap;
+          will-change: transform;
+          animation: ticker-scroll 30s linear infinite;
+        }
+
+        .ticker-item {
+          flex: 0 0 auto;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          margin-right: 4rem;
+        }
+
+        @keyframes ticker-scroll {
+          0% { transform: translate3d(0, 0, 0); }
+          100% { transform: translate3d(-50%, 0, 0); }
+        }
+
+        /* Schema Transitions */
+        .schema-content {
+          transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          transform: translateY(10px);
+        }
+
+        .schema-content.active {
+          opacity: 1;
+          position: relative;
+          pointer-events: auto;
+          transform: translateY(0);
+        }
+
+        /* TEXT GRADIENT (Blanc vers Vert Signal) */
+        .text-gradient {
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-image: linear-gradient(to right, #ffffff, #00E676);
+        }
+        
+        .animate-spin-slow {
+            animation: spin 8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
 </head>
 <body class="font-sans bg-light text-midnight antialiased overflow-x-hidden">
 
@@ -68,6 +165,7 @@
         <div class="container mx-auto px-6 relative z-10">
             <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                 
+                <!-- COLONNE GAUCHE : TEXTE -->
                 <div class="lg:w-1/2 text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-signal text-xs font-bold uppercase tracking-wider mb-6">
                         <span class="w-2 h-2 rounded-full bg-signal animate-pulse"></span>
@@ -79,8 +177,10 @@
                         <span class="text-gradient">bientôt automatisé.</span>
                     </h1>
                     
+                    <!-- PUNCHLINE -->
                     <p class="text-lightSlate text-lg mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0 font-light">
-                        SpotMyCar centralise les annonces de véhicules d'occasion de dizaines de plateformes, filtre et analyse leur rentabilité pour ne vous garder que les <strong>meilleures</strong> annonces, et gagner du temps.
+                        SpotMyCar centralise les annonces de véhicules d'occasion de dizaines de plateformes, filtre et analyse leur rentabilité pour ne vous garder que les <strong>meilleures</strong> annonces.
+                        <span class="block mt-2 italic text-signal">"Détectez l'opportunité. Maximisez la marge."</span>
                     </p>
                     
                     <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
@@ -95,74 +195,131 @@
                     </div>
                 </div>
 
-                <div class="lg:w-1/2 flex justify-center lg:justify-end relative animate-float">
-                    <div class="relative w-[300px] h-[580px] bg-midnightLight border-[6px] border-slate-700 rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col z-20">
-                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-28 h-6 bg-slate-800 rounded-b-xl z-30"></div>
-                        <div class="bg-midnight p-5 pt-10 border-b border-white/10 flex justify-between items-center shadow-lg z-20">
-                            <span class="text-white font-display font-bold tracking-wide">SpotMyCar</span>
-                            <div class="bg-signal/20 px-2 py-0.5 rounded text-[10px] text-signal font-bold border border-signal/30">BÊTA</div>
+                <!-- COLONNE DROITE : VISUEL (CHART / NUAGE DE POINTS) -->
+                <div class="lg:w-1/2 flex justify-center items-center relative animate-float w-full">
+                    
+                    <!-- Effet de lueur d'arrière-plan -->
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-signal/10 blur-[80px] rounded-full -z-10"></div>
+                
+                    <!-- Container Principal (Style Dashboard) -->
+                    <div class="relative w-full max-w-lg bg-midnightLight border border-slate-600 rounded-2xl shadow-2xl backdrop-blur-sm z-20">
+                        
+                        <!-- Header du Graphique -->
+                        <div class="px-6 py-4 border-b border-slate-600 flex justify-between items-center bg-midnight/50 rounded-t-2xl">
+                            <div>
+                                <h3 class="text-white font-bold tracking-wide text-sm md:text-base font-display">Analyse de Marché</h3>
+                                <p class="text-lightSlate text-[10px] md:text-xs font-sans mt-0.5">Renault Clio V (Comparatif)</p>
+                            </div>
+                            <div class="flex items-center gap-2 bg-signal/10 px-2 py-1 rounded border border-signal/20">
+                                <span class="flex h-1.5 w-1.5 relative">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-signal opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-signal"></span>
+                                </span>
+                                <span class="text-signal text-[10px] font-bold font-sans tracking-wide uppercase">Opportunité</span>
+                            </div>
                         </div>
-                        <div class="flex-1 bg-midnightLight p-4 flex flex-col gap-4 relative overflow-hidden">
-                            <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#94A3B8 1px, transparent 1px); background-size: 20px 20px;"></div>
-                            <div class="h-48 flex items-center justify-center my-2 relative z-10">
-                                <div class="relative w-[260px] h-[170px] rounded-2xl bg-midnight border border-white/10 overflow-hidden">
-                                    <div class="absolute inset-0 opacity-25" style="background-image: radial-gradient(#94A3B8 1px, transparent 1px); background-size: 18px 18px;"></div>
-
-                                    <!-- Zones + Droite "prix marché" -->
-                                    <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                                        <!-- Zone non rentable (sous la droite) -->
-                                        <polygon class="text-rose-500/15" fill="currentColor" points="0,65 100,30 100,100 0,100"></polygon>
-                                        <!-- Zone rentable (au-dessus de la droite) -->
-                                        <polygon class="text-signal/10" fill="currentColor" points="0,0 100,0 100,30 0,65"></polygon>
-                                        <!-- Droite prix marché -->
-                                        <line class="text-lightSlate/60" x1="0" y1="65" x2="100" y2="30" stroke="currentColor" stroke-width="1" />
-                                    </svg>
-
-                                    <!-- Nuage de points -->
-                                    <div class="absolute inset-0">
-                                        <!-- Bons deals (au-dessus de la droite) -->
-                                        <div class="absolute w-2 h-2 rounded-full bg-signal ring-2 ring-signal/20 animate-pulse" style="left: 12%; top: 34%"></div>
-                                        <div class="absolute w-2 h-2 rounded-full bg-signal ring-2 ring-signal/20" style="left: 34%; top: 36%"></div>
-                                        <div class="absolute w-2 h-2 rounded-full bg-signal ring-2 ring-signal/20" style="left: 58%; top: 31%"></div>
-                                        <div class="absolute w-2 h-2 rounded-full bg-signal ring-2 ring-signal/20" style="left: 82%; top: 24%"></div>
-
-                                        <!-- Pas des bonnes affaires (sous la droite) -->
-                                        <div class="absolute w-2 h-2 rounded-full bg-rose-500 ring-2 ring-rose-500/20" style="left: 14%; top: 74%"></div>
-                                        <div class="absolute w-2 h-2 rounded-full bg-rose-500 ring-2 ring-rose-500/20" style="left: 38%; top: 72%"></div>
-                                        <div class="absolute w-2 h-2 rounded-full bg-rose-500 ring-2 ring-rose-500/20" style="left: 50%; top: 60%"></div>
-                                        <div class="absolute w-2 h-2 rounded-full bg-rose-500 ring-2 ring-rose-500/20" style="left: 88%; top: 52%"></div>
-                                    </div>
-                                </div>
+                
+                        <!-- Zone du Graphique -->
+                        <div class="relative h-[320px] w-full bg-midnight p-6">
+                            
+                            <!-- Grille de fond (Axes) - BORDURES NETTES -->
+                            <div class="absolute inset-6 grid grid-cols-4 grid-rows-4 gap-0 pointer-events-none z-0 border-l border-b border-slate-500">
+                                <!-- Lignes horizontales -->
+                                <div class="border-t border-slate-700/50 w-full h-full col-span-4 row-span-1 border-dashed"></div>
+                                <div class="border-t border-slate-700/50 w-full h-full col-span-4 row-span-1 border-dashed"></div>
+                                <div class="border-t border-slate-700/50 w-full h-full col-span-4 row-span-1 border-dashed"></div>
+                                <div class="border-t border-slate-700/50 w-full h-full col-span-4 row-span-1 border-dashed"></div>
                             </div>
-                            <div class="flex justify-between items-end z-10 px-1">
-                                <span class="text-white font-bold text-sm">Dernières Pépites</span>
-                                <span class="text-xs text-signal font-medium">Simulation</span>
+                
+                            <!-- Labels des Axes -->
+                            <div class="absolute left-1 top-6 bottom-6 flex flex-col justify-between text-[10px] text-slate-400 font-sans font-medium">
+                                <span>25k€</span>
+                                <span>15k€</span>
+                                <span>5k€</span>
                             </div>
-                            <div class="bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-xl flex items-center gap-3 z-10 shadow-lg relative overflow-hidden group">
-                                <div class="absolute left-0 top-0 h-full w-1 bg-signal"></div>
-                                <div class="w-10 h-10 bg-slate-700 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <i class="fa-solid fa-car text-white text-sm"></i>
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <div class="flex justify-between items-start">
-                                        <h4 class="text-white font-bold text-sm truncate">Renault Clio V</h4>
-                                        <span class="text-midnight bg-signal text-[10px] font-bold px-1.5 py-0.5 rounded ml-2">+18%</span>
+                            <div class="absolute bottom-1 left-6 right-6 flex justify-between text-[10px] text-slate-400 font-sans font-medium">
+                                <span>0 Km</span>
+                                <span>100k Km</span>
+                                <span>200k Km</span>
+                            </div>
+                
+                            <!-- Nuage de points -->
+                            <div class="absolute inset-6 z-10">
+                                
+                                <!-- POINTS DU MARCHÉ : CLAIRS ET VISIBLES (Slate-400 sur Midnight) -->
+                                
+                                <!-- Groupe Cher / Peu kilométré (Haut Gauche) -->
+                                <div class="absolute w-2 h-2 bg-slate-400 rounded-full opacity-70 top-[10%] left-[5%] hover:opacity-100 transition-all"></div>
+                                <div class="absolute w-2 h-2 bg-slate-400 rounded-full opacity-70 top-[15%] left-[12%] hover:opacity-100 transition-all"></div>
+                                <div class="absolute w-2 h-2 bg-slate-400 rounded-full opacity-70 top-[8%] left-[18%] hover:opacity-100 transition-all"></div>
+                                
+                                <!-- Groupe Moyen (Milieu) -->
+                                <div class="absolute w-2 h-2 bg-slate-500 rounded-full opacity-60 top-[35%] left-[25%]"></div>
+                                <div class="absolute w-2 h-2 bg-slate-500 rounded-full opacity-60 top-[42%] left-[32%]"></div>
+                                <div class="absolute w-2 h-2 bg-slate-500 rounded-full opacity-60 top-[38%] left-[45%]"></div>
+                                <div class="absolute w-2 h-2 bg-slate-500 rounded-full opacity-60 top-[50%] left-[38%]"></div>
+                                <div class="absolute w-2 h-2 bg-slate-500 rounded-full opacity-60 top-[45%] left-[55%]"></div>
+                
+                                <!-- Groupe Vieux / Pas cher (Bas Droite) -->
+                                <div class="absolute w-2 h-2 bg-slate-600 rounded-full opacity-50 top-[75%] left-[65%]"></div>
+                                <div class="absolute w-2 h-2 bg-slate-600 rounded-full opacity-50 top-[82%] left-[80%]"></div>
+                                <div class="absolute w-2 h-2 bg-slate-600 rounded-full opacity-50 top-[68%] left-[75%]"></div>
+                                <div class="absolute w-2 h-2 bg-slate-600 rounded-full opacity-50 top-[88%] left-[90%]"></div>
+                                
+                                <!-- Autres points aléatoires -->
+                                <div class="absolute w-1.5 h-1.5 bg-slate-500 rounded-full opacity-60 top-[25%] left-[22%]"></div>
+                                <div class="absolute w-1.5 h-1.5 bg-slate-500 rounded-full opacity-60 top-[55%] left-[62%]"></div>
+                                <div class="absolute w-1.5 h-1.5 bg-slate-500 rounded-full opacity-60 top-[33%] left-[82%]"></div>
+                
+                                <!-- L'OPPORTUNITÉ (LE "SPOT") -->
+                                <div class="absolute top-[55%] left-[28%] group cursor-pointer z-30">
+                                    <!-- Cercle pulsant -->
+                                    <div class="absolute -inset-4 bg-signal/20 rounded-full animate-pulse z-0"></div>
+                                    <!-- Point central -->
+                                    <div class="relative w-3 h-3 bg-signal rounded-full shadow-[0_0_15px_rgba(0,230,118,1)] border-2 border-midnight z-10 transition-transform group-hover:scale-125"></div>
+                                    
+                                    <!-- Tooltip "Smart" - FIX: mb-2 pour coller au point, plus d'animation float isolée -->
+                                    <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-44 bg-slate-900 border border-signal/50 p-3 rounded-lg shadow-2xl z-50">
+                                        <!-- Petite flèche tooltip -->
+                                        <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-slate-900 border-b border-r border-signal/50 rotate-45"></div>
+
+                                        <div class="text-[10px] text-slate-300 font-sans mb-1 uppercase tracking-wider font-bold">Marge Potentielle</div>
+                                        <div class="text-xl font-bold text-white font-display leading-none flex items-center gap-2">
+                                            +1 850€ <i class="fa-solid fa-arrow-trend-up text-signal text-sm"></i>
+                                        </div>
+                                        <!-- Mini bar chart -->
+                                        <div class="w-full bg-slate-800 h-1.5 mt-2 rounded-full overflow-hidden border border-white/10">
+                                            <div class="bg-signal h-full w-[85%] rounded-full shadow-[0_0_5px_rgba(0,230,118,0.8)]"></div>
+                                        </div>
                                     </div>
-                                    <div class="flex justify-between mt-1 text-xs text-lightSlate font-medium">
-                                        <span>45 000 km</span>
-                                        <span class="text-white font-bold">12 500 €</span>
-                                    </div>
+                                    
+                                    <!-- Ligne connecteur vers l'axe (pour effet technique) -->
+                                    <div class="absolute top-3 left-1/2 w-[1px] h-[300px] bg-gradient-to-b from-signal/40 to-transparent -z-10 border-r border-dotted border-signal/40 opacity-60"></div>
                                 </div>
+                
+                            </div>
+                        </div>
+                
+                        <!-- Footer / Résumé -->
+                        <div class="bg-slate-800/40 px-6 py-4 flex justify-between items-center border-t border-slate-600 backdrop-blur-md rounded-b-2xl">
+                            <div class="flex flex-col">
+                                <span class="text-lightSlate text-[10px] font-sans uppercase tracking-wide">Cote estimée</span>
+                                <span class="text-white font-bold font-display text-sm md:text-base">14 200 €</span>
+                            </div>
+                            <div class="h-8 w-px bg-white/10 mx-2"></div>
+                            <div class="flex flex-col text-right">
+                                <span class="text-lightSlate text-[10px] font-sans uppercase tracking-wide">Prix détecté</span>
+                                <span class="text-signal font-bold font-display text-sm md:text-base">12 350 €</span>
                             </div>
                         </div>
                     </div>
-                    <div class="absolute -z-10 top-20 right-[-20px] w-64 h-64 bg-signal/10 rounded-full blur-3xl"></div>
                 </div>
+
             </div>
         </div>
     </header>
 
-    <!-- INFINITE SOURCE TICKER (FIXED) -->
+    <!-- INFINITE SOURCE TICKER -->
     <div class="bg-midnightLight border-y border-white/5 py-4 overflow-hidden relative z-20">
         <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-midnightLight to-transparent z-10"></div>
         <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-midnightLight to-transparent z-10"></div>
@@ -170,14 +327,14 @@
         <div class="ticker-container">
             <div class="ticker-wrapper">
                 <!-- On répète suffisamment d'éléments pour couvrir l'écran large -->
-                <span class="ticker-item text-xl font-display font-bold text-white/30 uppercase tracking-widest"><i class="fa-solid fa-circle text-[6px] text-signal"></i> LeBonCoin</span>
-                <span class="ticker-item text-xl font-display font-bold text-white/30 uppercase tracking-widest"><i class="fa-solid fa-circle text-[6px] text-signal"></i> LaCentrale</span>
-                <span class="ticker-item text-xl font-display font-bold text-white/30 uppercase tracking-widest"><i class="fa-solid fa-circle text-[6px] text-signal"></i> Auto1</span>
-                <span class="ticker-item text-xl font-display font-bold text-white/30 uppercase tracking-widest"><i class="fa-solid fa-circle text-[6px] text-signal"></i> Autovista</span>
-                <span class="ticker-item text-xl font-display font-bold text-white/30 uppercase tracking-widest"><i class="fa-solid fa-circle text-[6px] text-signal"></i> AramisAuto</span>
-                <span class="ticker-item text-xl font-display font-bold text-white/30 uppercase tracking-widest"><i class="fa-solid fa-circle text-[6px] text-signal"></i> AutoScout24</span>
-                <span class="ticker-item text-xl font-display font-bold text-white/30 uppercase tracking-widest"><i class="fa-solid fa-circle text-[6px] text-signal"></i> ParuVendu</span>
-                <span class="ticker-item text-xl font-display font-bold text-white/30 uppercase tracking-widest"><i class="fa-solid fa-circle text-[6px] text-signal"></i> L'Argus</span>
+                <span class="ticker-item text-xl font-display font-bold text-white/30 uppercase tracking-widest"><i class="fa-solid fa-circle text-[6px] text-signal align-middle mr-2"></i> LeBonCoin</span>
+                <span class="ticker-item text-xl font-display font-bold text-white/30 uppercase tracking-widest"><i class="fa-solid fa-circle text-[6px] text-signal align-middle mr-2"></i> LaCentrale</span>
+                <span class="ticker-item text-xl font-display font-bold text-white/30 uppercase tracking-widest"><i class="fa-solid fa-circle text-[6px] text-signal align-middle mr-2"></i> Auto1</span>
+                <span class="ticker-item text-xl font-display font-bold text-white/30 uppercase tracking-widest"><i class="fa-solid fa-circle text-[6px] text-signal align-middle mr-2"></i> Autovista</span>
+                <span class="ticker-item text-xl font-display font-bold text-white/30 uppercase tracking-widest"><i class="fa-solid fa-circle text-[6px] text-signal align-middle mr-2"></i> AramisAuto</span>
+                <span class="ticker-item text-xl font-display font-bold text-white/30 uppercase tracking-widest"><i class="fa-solid fa-circle text-[6px] text-signal align-middle mr-2"></i> AutoScout24</span>
+                <span class="ticker-item text-xl font-display font-bold text-white/30 uppercase tracking-widest"><i class="fa-solid fa-circle text-[6px] text-signal align-middle mr-2"></i> ParuVendu</span>
+                <span class="ticker-item text-xl font-display font-bold text-white/30 uppercase tracking-widest"><i class="fa-solid fa-circle text-[6px] text-signal align-middle mr-2"></i> L'Argus</span>
                 
                 <!-- DUPLICATION (Pour boucle infinie sans coupure) -->
                 <span class="ticker-item text-xl font-display font-bold text-white/30 uppercase tracking-widest"><i class="fa-solid fa-circle text-[6px] text-signal"></i> LeBonCoin</span>
@@ -250,24 +407,24 @@
                 
                 <!-- Liste des Étapes (Onglets) -->
                 <div class="lg:w-1/3 flex flex-col gap-4">
-                    <button class="process-tab active flex items-center gap-4 p-6 rounded-xl bg-midnightLight border border-white/10 hover:border-signal/50 transition-all text-left group" data-target="step1">
-                        <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white font-bold group-[.active]:bg-signal group-[.active]:text-midnight transition-colors">1</div>
+                    <button class="process-tab active flex items-center gap-4 p-6 rounded-xl bg-midnightLight border border-white/10 hover:border-signal/50 transition-all text-left group w-full" data-target="step1">
+                        <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white font-bold group-[.active]:bg-signal group-[.active]:text-midnight transition-colors flex-shrink-0">1</div>
                         <div>
                             <h4 class="text-white font-bold text-lg group-[.active]:text-signal transition-colors">Récolte Massive</h4>
                             <p class="text-lightSlate/80 text-sm mt-1">Multi-sources en temps réel</p>
                         </div>
                     </button>
 
-                    <button class="process-tab flex items-center gap-4 p-6 rounded-xl bg-midnightLight border border-white/10 hover:border-signal/50 transition-all text-left group" data-target="step2">
-                        <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white font-bold group-[.active]:bg-signal group-[.active]:text-midnight transition-colors">2</div>
+                    <button class="process-tab flex items-center gap-4 p-6 rounded-xl bg-midnightLight border border-white/10 hover:border-signal/50 transition-all text-left group w-full" data-target="step2">
+                        <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white font-bold group-[.active]:bg-signal group-[.active]:text-midnight transition-colors flex-shrink-0">2</div>
                         <div>
                             <h4 class="text-white font-bold text-lg group-[.active]:text-signal transition-colors">Analyse IA</h4>
                             <p class="text-lightSlate/80 text-sm mt-1">Filtrage et calcul de marge</p>
                         </div>
                     </button>
 
-                    <button class="process-tab flex items-center gap-4 p-6 rounded-xl bg-midnightLight border border-white/10 hover:border-signal/50 transition-all text-left group" data-target="step3">
-                        <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white font-bold group-[.active]:bg-signal group-[.active]:text-midnight transition-colors">3</div>
+                    <button class="process-tab flex items-center gap-4 p-6 rounded-xl bg-midnightLight border border-white/10 hover:border-signal/50 transition-all text-left group w-full" data-target="step3">
+                        <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white font-bold group-[.active]:bg-signal group-[.active]:text-midnight transition-colors flex-shrink-0">3</div>
                         <div>
                             <h4 class="text-white font-bold text-lg group-[.active]:text-signal transition-colors">Affichage & Action</h4>
                             <p class="text-lightSlate/80 text-sm mt-1">Alerte instantanée</p>
@@ -276,7 +433,7 @@
                 </div>
 
                 <!-- Zone d'Affichage des Schémas -->
-                <div class="lg:w-2/3 bg-midnightLight border border-white/10 rounded-2xl h-[400px] relative overflow-hidden shadow-2xl flex items-center justify-center p-8">
+                <div class="lg:w-2/3 bg-midnightLight border border-white/10 rounded-2xl h-[400px] relative overflow-hidden shadow-2xl flex items-center justify-center p-8 w-full">
                     
                     <!-- Schéma 1: Récolte -->
                     <div id="step1" class="schema-content active flex flex-col items-center justify-center w-full">
@@ -444,5 +601,41 @@
     </footer>
 
     <script src="./assets/js/main.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+            }
+
+            // Tabs Logic (Process Section)
+            const tabs = document.querySelectorAll('.process-tab');
+            const contents = document.querySelectorAll('.schema-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tab
+                    tab.classList.add('active');
+
+                    // Hide all contents
+                    contents.forEach(c => c.classList.remove('active'));
+                    
+                    // Show target content
+                    const targetId = tab.getAttribute('data-target');
+                    const targetContent = document.getElementById(targetId);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
