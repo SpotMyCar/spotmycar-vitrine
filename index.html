@@ -1147,7 +1147,7 @@
                     var token = result.data.session.access_token;
                     var refresh = result.data.session.refresh_token;
                     setTimeout(function() {
-                        window.location.href = APP_URL + '#access_token=' + token + '&refresh_token=' + refresh + '&type=recovery';
+                        window.location.href = APP_URL + '#access_token=' + token + '&refresh_token=' + refresh + '&type=magiclink';
                     }, 1200);
                 }
             };
