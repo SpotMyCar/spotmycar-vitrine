@@ -15,97 +15,52 @@
             theme: {
                 extend: {
                     colors: {
-                        midnight: "#0A192F",
-                        midnightLight: "#112240",
-                        signal: "#00E676",
-                        signalHover: "#00C853",
+                        midnight: "#0A192F", midnightLight: "#112240",
+                        signal: "#00E676", signalHover: "#00C853",
                     },
                     fontFamily: {
-                        sans: ["Inter", "sans-serif"],
-                        display: ["Montserrat", "sans-serif"],
-                        mono: ["JetBrains Mono", "monospace"]
+                        sans: ["Inter","sans-serif"],
+                        display: ["Montserrat","sans-serif"],
+                        mono: ["JetBrains Mono","monospace"]
                     }
                 }
             }
         };
     </script>
     <style>
-        body { background: #0A192F; color: #A8B2D1; }
-
-        .btn-primary {
-            background: #00E676; color: #0A192F; font-weight: 800;
-            border-radius: 8px; transition: all 0.2s;
-            box-shadow: 0 0 20px rgba(0,230,118,0.35);
-        }
-        .btn-primary:hover {
-            background: #00C853;
-            box-shadow: 0 0 35px rgba(0,230,118,0.55);
-            transform: translateY(-1px);
-        }
-
-        .card-glow {
-            background: #112240; border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 16px; transition: border-color 0.2s, transform 0.2s;
-        }
-        .card-glow:hover { border-color: rgba(0,230,118,0.3); transform: translateY(-4px); }
-
-        .ticker-wrapper { display: inline-flex; animation: ticker 35s linear infinite; }
-        @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-        .text-gradient {
-            background: linear-gradient(90deg, #fff 0%, #00E676 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-        }
-
-        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-
-        .browser-frame {
-            background: #0D1F3C; border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px; overflow: hidden;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(0,230,118,0.06);
-        }
-        .browser-dots { display: flex; gap: 6px; align-items: center; padding: 12px 16px; background: #0A192F; border-bottom: 1px solid rgba(255,255,255,0.06); }
-        .browser-dot { width: 10px; height: 10px; border-radius: 50%; }
-
-        .pricing-active {
-            background: linear-gradient(135deg, #112240 0%, #0D2040 100%);
-            border: 1px solid rgba(0,230,118,0.4);
-            box-shadow: 0 0 40px rgba(0,230,118,0.1);
-        }
-
-        .badge {
-            display: inline-flex; align-items: center; gap: 6px;
-            padding: 4px 12px; background: rgba(0,230,118,0.08);
-            border: 1px solid rgba(0,230,118,0.2); border-radius: 999px;
-            color: #00E676; font-size: 11px; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 0.08em;
-        }
-        .feat-icon {
-            width: 48px; height: 48px; border-radius: 12px;
-            background: rgba(0,230,118,0.08); border: 1px solid rgba(0,230,118,0.15);
-            display: flex; align-items: center; justify-content: center;
-            color: #00E676; font-size: 18px; flex-shrink: 0;
-        }
-        .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent); }
-
-        nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
-
-        .coming-soon-overlay { position: relative; overflow: hidden; }
-        .coming-soon-overlay::after {
-            content: ''; position: absolute; inset: 0;
-            background: rgba(10,25,47,0.55); backdrop-filter: blur(2px); border-radius: inherit;
-        }
-        .coming-soon-badge {
-            position: absolute; top: 16px; right: 16px; z-index: 10;
-            background: #112240; border: 1px solid rgba(255,255,255,0.1);
-            color: #A8B2D1; font-size: 10px; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 0.1em;
-            padding: 4px 10px; border-radius: 999px;
-        }
+        body { background:#0A192F; color:#A8B2D1; }
+        .btn-primary { background:#00E676; color:#0A192F; font-weight:800; border-radius:8px; transition:all 0.2s; box-shadow:0 0 20px rgba(0,230,118,0.35); }
+        .btn-primary:hover { background:#00C853; box-shadow:0 0 35px rgba(0,230,118,0.55); transform:translateY(-1px); }
+        .card-glow { background:#112240; border:1px solid rgba(255,255,255,0.07); border-radius:16px; transition:border-color 0.2s,transform 0.2s; }
+        .card-glow:hover { border-color:rgba(0,230,118,0.3); transform:translateY(-4px); }
+        .text-gradient { background:linear-gradient(90deg,#fff 0%,#00E676 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .reveal { opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; }
+        .reveal.visible { opacity:1; transform:translateY(0); }
+        .browser-frame { background:#0D1F3C; border:1px solid rgba(255,255,255,0.1); border-radius:12px; overflow:hidden; box-shadow:0 40px 80px rgba(0,0,0,0.6),0 0 60px rgba(0,230,118,0.06); }
+        .browser-dots { display:flex; gap:6px; align-items:center; padding:12px 16px; background:#0A192F; border-bottom:1px solid rgba(255,255,255,0.06); }
+        .browser-dot { width:10px; height:10px; border-radius:50%; }
+        .pricing-active { background:linear-gradient(135deg,#112240 0%,#0D2040 100%); border:1px solid rgba(0,230,118,0.4); box-shadow:0 0 40px rgba(0,230,118,0.1); }
+        .badge { display:inline-flex; align-items:center; gap:6px; padding:4px 12px; background:rgba(0,230,118,0.08); border:1px solid rgba(0,230,118,0.2); border-radius:999px; color:#00E676; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; }
+        .feat-icon { width:48px; height:48px; border-radius:12px; background:rgba(0,230,118,0.08); border:1px solid rgba(0,230,118,0.15); display:flex; align-items:center; justify-content:center; color:#00E676; font-size:18px; flex-shrink:0; }
+        .section-divider { height:1px; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent); }
+        nav { backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); }
+        .coming-soon-overlay { position:relative; overflow:hidden; }
+        .coming-soon-overlay::after { content:''; position:absolute; inset:0; background:rgba(10,25,47,0.55); backdrop-filter:blur(2px); border-radius:inherit; }
+        .coming-soon-badge { position:absolute; top:16px; right:16px; z-index:10; background:#112240; border:1px solid rgba(255,255,255,0.1); color:#A8B2D1; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; padding:4px 10px; border-radius:999px; }
+        .lightbox { display:none; position:fixed; inset:0; z-index:200; background:rgba(0,0,0,0.92); align-items:center; justify-content:center; cursor:zoom-out; }
+        .lightbox.open { display:flex; }
+        .lightbox img { max-width:90vw; max-height:90vh; border-radius:8px; box-shadow:0 0 80px rgba(0,230,118,0.15); }
+        .screenshot-img { cursor:zoom-in; transition:opacity 0.2s; }
+        .screenshot-img:hover { opacity:0.85; }
+        .lang-btn { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; padding:3px 8px; border-radius:6px; transition:all 0.15s; cursor:pointer; border:none; background:transparent; }
+        .lang-btn.active { background:rgba(0,230,118,0.12); color:#00E676; }
+        .lang-btn:not(.active) { color:#A8B2D1; }
+        .lang-btn:not(.active):hover { color:#fff; }
+        .stats-strip { background:#080F1E; border-top:1px solid rgba(255,255,255,0.05); border-bottom:1px solid rgba(255,255,255,0.05); }
     </style>
 </head>
 <body class="font-sans antialiased overflow-x-hidden">
+
 <!-- NAV -->
 <nav class="fixed w-full z-50 bg-midnight/80 border-b border-white/5" id="navbar">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -116,73 +71,80 @@
             <span class="font-display font-extrabold text-xl text-white">Spot<span class="text-signal">MyCar</span></span>
         </a>
         <div class="hidden md:flex items-center gap-8">
-            <a href="#features" class="text-[#A8B2D1] hover:text-white text-sm font-medium transition-colors">Fonctionnalités</a>
-            <a href="#screenshots" class="text-[#A8B2D1] hover:text-white text-sm font-medium transition-colors">Aperçu</a>
-            <a href="#pricing" class="text-[#A8B2D1] hover:text-white text-sm font-medium transition-colors">Tarifs</a>
+            <a href="#features" class="text-[#A8B2D1] hover:text-white text-sm font-medium transition-colors" data-i18n="nav.features">Fonctionnalités</a>
+            <a href="#screenshots" class="text-[#A8B2D1] hover:text-white text-sm font-medium transition-colors" data-i18n="nav.preview">Aperçu</a>
+            <a href="#pricing" class="text-[#A8B2D1] hover:text-white text-sm font-medium transition-colors" data-i18n="nav.pricing">Tarifs</a>
         </div>
         <div class="hidden md:flex items-center gap-3">
-            <button onclick="openAuthModal('login')" class="px-4 py-2 text-sm font-semibold text-[#A8B2D1] hover:text-white transition-colors">Se connecter</button>
-            <button onclick="openAuthModal('register')" class="btn-primary px-5 py-2.5 text-sm">Commencer →</button>
+            <div class="flex items-center gap-1 mr-2 border border-white/10 rounded-lg px-1 py-1">
+                <button class="lang-btn active" id="btn-fr" onclick="setLang('fr')">FR</button>
+                <span class="text-white/20 text-xs">|</span>
+                <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+            </div>
+            <button onclick="openAuthModal('login')" class="px-4 py-2 text-sm font-semibold text-[#A8B2D1] hover:text-white transition-colors" data-i18n="nav.login">Se connecter</button>
+            <button onclick="openAuthModal('register')" class="btn-primary px-5 py-2.5 text-sm" data-i18n="nav.cta">Commencer →</button>
         </div>
         <button class="md:hidden text-white text-xl" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
     </div>
     <div class="md:hidden hidden bg-midnight border-b border-white/10 absolute w-full" id="mobile-menu">
         <div class="px-6 py-6 flex flex-col gap-5">
-            <a href="#features" class="text-white text-base font-medium">Fonctionnalités</a>
-            <a href="#screenshots" class="text-white text-base font-medium">Aperçu</a>
-            <a href="#pricing" class="text-white text-base font-medium">Tarifs</a>
+            <a href="#features" class="text-white text-base font-medium" data-i18n="nav.features">Fonctionnalités</a>
+            <a href="#screenshots" class="text-white text-base font-medium" data-i18n="nav.preview">Aperçu</a>
+            <a href="#pricing" class="text-white text-base font-medium" data-i18n="nav.pricing">Tarifs</a>
+            <div class="flex items-center gap-2 py-2">
+                <button class="lang-btn active" id="btn-fr-m" onclick="setLang('fr')">FR</button>
+                <span class="text-white/20 text-xs">|</span>
+                <button class="lang-btn" id="btn-en-m" onclick="setLang('en')">EN</button>
+            </div>
             <div class="flex flex-col gap-3 pt-4 border-t border-white/10">
-                <button onclick="openAuthModal('login')" class="w-full py-3 border border-white/20 text-white font-semibold rounded-lg text-sm">Se connecter</button>
-                <button onclick="openAuthModal('register')" class="btn-primary w-full py-3 text-sm">Commencer →</button>
+                <button onclick="openAuthModal('login')" class="w-full py-3 border border-white/20 text-white font-semibold rounded-lg text-sm" data-i18n="nav.login">Se connecter</button>
+                <button onclick="openAuthModal('register')" class="btn-primary w-full py-3 text-sm" data-i18n="nav.cta">Commencer →</button>
             </div>
         </div>
     </div>
 </nav>
-
 <!-- HERO -->
 <header class="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
     <div class="absolute top-[-15%] right-[-5%] w-[600px] h-[600px] bg-signal/5 blur-[120px] rounded-full pointer-events-none"></div>
     <div class="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-blue-600/5 blur-[100px] rounded-full pointer-events-none"></div>
     <div class="max-w-6xl mx-auto px-6 relative z-10">
         <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
-            <!-- LEFT -->
             <div class="lg:w-[52%] text-center lg:text-left">
                 <div class="badge mb-6">
                     <span class="w-1.5 h-1.5 rounded-full bg-signal animate-pulse"></span>
-                    Accès ouvert · Région Sud-Ouest
+                    <span data-i18n="hero.badge">Accès ouvert · Région Sud-Est</span>
                 </div>
-                <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-[3.5rem] text-white leading-[1.08] mb-6">
+                <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-[3.5rem] text-white leading-[1.08] mb-6" data-i18n="hero.title">
                     Moins de recherche.<br><span class="text-gradient">Plus de marge.</span>
                 </h1>
-                <p class="text-[#A8B2D1] text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+                <p class="text-[#A8B2D1] text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0" data-i18n="hero.desc">
                     SpotMyCar agrège les annonces de plusieurs plateformes, les analyse avec un score IA et vous remonte uniquement les <strong class="text-white">opportunités rentables</strong> — en temps réel.
                 </p>
                 <div class="flex flex-wrap gap-6 justify-center lg:justify-start mb-10">
                     <div class="flex items-center gap-2">
                         <span class="font-mono text-signal font-medium text-lg">3</span>
-                        <span class="text-[#A8B2D1] text-sm">sources agrégées</span>
+                        <span class="text-[#A8B2D1] text-sm" data-i18n="hero.stat1">sources agrégées</span>
                     </div>
                     <div class="w-px h-6 bg-white/10"></div>
                     <div class="flex items-center gap-2">
                         <span class="font-mono text-signal font-medium text-lg">+2 500€</span>
-                        <span class="text-[#A8B2D1] text-sm">marge moy. détectée</span>
+                        <span class="text-[#A8B2D1] text-sm" data-i18n="hero.stat2">marge moy. détectée</span>
                     </div>
                     <div class="w-px h-6 bg-white/10"></div>
                     <div class="flex items-center gap-2">
-                        <span class="font-mono text-signal font-medium text-lg">∞</span>
-                        <span class="text-[#A8B2D1] text-sm">annonces/jour</span>
+                        <span class="font-mono text-signal font-medium text-lg">+1 000</span>
+                        <span class="text-[#A8B2D1] text-sm" data-i18n="hero.stat3">nouvelles annonces/jour</span>
                     </div>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                     <button onclick="openAuthModal('register')" class="btn-primary px-8 py-4 text-base flex items-center justify-center gap-2">
-                        Accéder à SpotMyCar <i class="fa-solid fa-arrow-right"></i>
+                        <span data-i18n="hero.cta">Accéder à SpotMyCar</span> <i class="fa-solid fa-arrow-right"></i>
                     </button>
                     <a href="#screenshots" class="px-8 py-4 text-base font-semibold text-[#A8B2D1] hover:text-white border border-white/10 hover:border-white/25 rounded-lg transition-all flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-play text-signal text-xs"></i> Voir l'outil
+                        <i class="fa-solid fa-play text-signal text-xs"></i> <span data-i18n="hero.see">Voir l'outil</span>
                     </a>
                 </div>
             </div>
-            <!-- RIGHT : Dashboard mockup -->
             <div class="lg:w-[48%] w-full">
                 <div class="browser-frame">
                     <div class="browser-dots">
@@ -193,7 +155,7 @@
                     </div>
                     <div class="p-5 space-y-3" style="background:#0A192F">
                         <div class="flex justify-between items-center mb-2">
-                            <span class="text-white font-display font-bold text-sm">Annonces du jour</span>
+                            <span class="text-white font-display font-bold text-sm" data-i18n="mock.title">Annonces du jour</span>
                             <span class="badge text-[10px]"><span class="w-1.5 h-1.5 rounded-full bg-signal animate-pulse"></span> Live</span>
                         </div>
                         <div class="flex items-center gap-3 p-3 rounded-lg bg-signal/5 border border-signal/20">
@@ -239,24 +201,27 @@
     </div>
 </header>
 
-<!-- TICKER -->
-<div class="border-y border-white/5 py-4 overflow-hidden relative" style="background:#080F1E">
-    <div class="absolute left-0 top-0 bottom-0 w-24 z-10" style="background:linear-gradient(90deg,#080F1E,transparent)"></div>
-    <div class="absolute right-0 top-0 bottom-0 w-24 z-10" style="background:linear-gradient(-90deg,#080F1E,transparent)"></div>
-    <div class="ticker-wrapper whitespace-nowrap">
-        <span class="inline-flex items-center gap-2 mx-12 text-[#A8B2D1]/40 text-sm font-display font-bold uppercase tracking-widest"><i class="fa-solid fa-circle text-signal text-[5px]"></i> AramisAuto</span>
-        <span class="inline-flex items-center gap-2 mx-12 text-[#A8B2D1]/40 text-sm font-display font-bold uppercase tracking-widest"><i class="fa-solid fa-circle text-signal text-[5px]"></i> AutoScout24</span>
-        <span class="inline-flex items-center gap-2 mx-12 text-[#A8B2D1]/40 text-sm font-display font-bold uppercase tracking-widest"><i class="fa-solid fa-circle text-signal text-[5px]"></i> LeBonCoin</span>
-        <span class="inline-flex items-center gap-2 mx-12 text-[#A8B2D1]/40 text-sm font-display font-bold uppercase tracking-widest"><i class="fa-solid fa-circle text-signal text-[5px]"></i> LaCentrale</span>
-        <span class="inline-flex items-center gap-2 mx-12 text-[#A8B2D1]/40 text-sm font-display font-bold uppercase tracking-widest"><i class="fa-solid fa-circle text-signal text-[5px]"></i> ParuVendu</span>
-        <span class="inline-flex items-center gap-2 mx-12 text-[#A8B2D1]/40 text-sm font-display font-bold uppercase tracking-widest"><i class="fa-solid fa-circle text-signal text-[5px]"></i> L'Argus</span>
-        <!-- duplicate pour boucle -->
-        <span class="inline-flex items-center gap-2 mx-12 text-[#A8B2D1]/40 text-sm font-display font-bold uppercase tracking-widest"><i class="fa-solid fa-circle text-signal text-[5px]"></i> AramisAuto</span>
-        <span class="inline-flex items-center gap-2 mx-12 text-[#A8B2D1]/40 text-sm font-display font-bold uppercase tracking-widest"><i class="fa-solid fa-circle text-signal text-[5px]"></i> AutoScout24</span>
-        <span class="inline-flex items-center gap-2 mx-12 text-[#A8B2D1]/40 text-sm font-display font-bold uppercase tracking-widest"><i class="fa-solid fa-circle text-signal text-[5px]"></i> LeBonCoin</span>
-        <span class="inline-flex items-center gap-2 mx-12 text-[#A8B2D1]/40 text-sm font-display font-bold uppercase tracking-widest"><i class="fa-solid fa-circle text-signal text-[5px]"></i> LaCentrale</span>
-        <span class="inline-flex items-center gap-2 mx-12 text-[#A8B2D1]/40 text-sm font-display font-bold uppercase tracking-widest"><i class="fa-solid fa-circle text-signal text-[5px]"></i> ParuVendu</span>
-        <span class="inline-flex items-center gap-2 mx-12 text-[#A8B2D1]/40 text-sm font-display font-bold uppercase tracking-widest"><i class="fa-solid fa-circle text-signal text-[5px]"></i> L'Argus</span>
+<!-- STATS STRIP -->
+<div class="stats-strip py-8">
+    <div class="max-w-5xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+                <div class="font-mono text-signal text-2xl font-medium mb-1">+1 000</div>
+                <div class="text-[#A8B2D1]/60 text-xs uppercase tracking-widest" data-i18n="strip.s1">annonces analysées/jour</div>
+            </div>
+            <div>
+                <div class="font-mono text-signal text-2xl font-medium mb-1">3</div>
+                <div class="text-[#A8B2D1]/60 text-xs uppercase tracking-widest" data-i18n="strip.s2">sources en temps réel</div>
+            </div>
+            <div>
+                <div class="font-mono text-signal text-2xl font-medium mb-1">+2 500€</div>
+                <div class="text-[#A8B2D1]/60 text-xs uppercase tracking-widest" data-i18n="strip.s3">marge moy. détectée</div>
+            </div>
+            <div>
+                <div class="font-mono text-signal text-2xl font-medium mb-1">Score IA</div>
+                <div class="text-[#A8B2D1]/60 text-xs uppercase tracking-widest" data-i18n="strip.s4">sur chaque annonce</div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -264,40 +229,40 @@
 <section id="features" class="py-24" style="background:#0A192F">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-            <div class="badge mb-4">Fonctionnalités</div>
-            <h2 class="font-display font-black text-3xl md:text-4xl text-white mb-4">Un analyste virtuel qui tourne 24h/24</h2>
-            <p class="text-[#A8B2D1] text-lg">Pendant que vous dormez, SpotMyCar scrute les plateformes et identifie les pépites.</p>
+            <div class="badge mb-4" data-i18n="feat.badge">Fonctionnalités</div>
+            <h2 class="font-display font-black text-3xl md:text-4xl text-white mb-4" data-i18n="feat.title">Un analyste virtuel qui tourne 24h/24</h2>
+            <p class="text-[#A8B2D1] text-lg" data-i18n="feat.sub">Pendant que vous dormez, SpotMyCar scrute les plateformes et identifie les pépites.</p>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             <div class="card-glow p-7 reveal">
                 <div class="feat-icon mb-5"><i class="fa-solid fa-satellite-dish"></i></div>
-                <h3 class="font-display font-bold text-white text-lg mb-2">Agrégation multi-sources</h3>
-                <p class="text-[#A8B2D1] text-sm leading-relaxed">3 plateformes surveillées en continu. Toutes les annonces en un seul tableau de bord, sans aller-retour entre les sites.</p>
+                <h3 class="font-display font-bold text-white text-lg mb-2" data-i18n="feat.f1t">Agrégation multi-sources</h3>
+                <p class="text-[#A8B2D1] text-sm leading-relaxed" data-i18n="feat.f1d">3 plateformes surveillées en continu. Toutes les annonces en un seul tableau de bord, sans aller-retour entre les sites.</p>
             </div>
             <div class="card-glow p-7 reveal" style="transition-delay:0.08s">
                 <div class="feat-icon mb-5"><i class="fa-solid fa-microchip"></i></div>
-                <h3 class="font-display font-bold text-white text-lg mb-2">Score IA /10</h3>
-                <p class="text-[#A8B2D1] text-sm leading-relaxed">Chaque annonce reçoit un score calculé sur le prix, le kilométrage, l'année et le marché local. Plus besoin d'estimer à l'œil.</p>
+                <h3 class="font-display font-bold text-white text-lg mb-2" data-i18n="feat.f2t">Score IA /10</h3>
+                <p class="text-[#A8B2D1] text-sm leading-relaxed" data-i18n="feat.f2d">Chaque annonce reçoit un score calculé sur le prix, le kilométrage, l'année et le marché local. Plus besoin d'estimer à l'œil.</p>
             </div>
             <div class="card-glow p-7 reveal" style="transition-delay:0.16s">
                 <div class="feat-icon mb-5"><i class="fa-solid fa-euro-sign"></i></div>
-                <h3 class="font-display font-bold text-white text-lg mb-2">Estimation de marge réelle</h3>
-                <p class="text-[#A8B2D1] text-sm leading-relaxed">Colonne <span class="font-mono text-signal text-xs">MARGE €</span> calculée en temps réel. Vous savez exactement combien vous pouvez gagner avant d'appeler.</p>
+                <h3 class="font-display font-bold text-white text-lg mb-2" data-i18n="feat.f3t">Estimation de marge réelle</h3>
+                <p class="text-[#A8B2D1] text-sm leading-relaxed" data-i18n="feat.f3d">Colonne MARGE € calculée en temps réel. Vous savez exactement combien vous pouvez gagner avant d'appeler.</p>
             </div>
             <div class="card-glow p-7 reveal">
-                <div class="feat-icon mb-5"><i class="fa-solid fa-chart-scatter"></i></div>
-                <h3 class="font-display font-bold text-white text-lg mb-2">Matrice KM / Prix</h3>
-                <p class="text-[#A8B2D1] text-sm leading-relaxed">Visualisez les annonces sur un graphique prix vs kilométrage. Les points verts en dessous de la courbe = bonnes affaires identifiées instantanément.</p>
+                <div class="feat-icon mb-5"><i class="fa-solid fa-chart-line"></i></div>
+                <h3 class="font-display font-bold text-white text-lg mb-2" data-i18n="feat.f4t">Matrice KM / Prix</h3>
+                <p class="text-[#A8B2D1] text-sm leading-relaxed" data-i18n="feat.f4d">Visualisez les annonces sur un graphique prix vs kilométrage. Les points verts sous la courbe = bonnes affaires identifiées instantanément.</p>
             </div>
             <div class="card-glow p-7 reveal" style="transition-delay:0.08s">
                 <div class="feat-icon mb-5"><i class="fa-solid fa-bell"></i></div>
-                <h3 class="font-display font-bold text-white text-lg mb-2">Alertes sourcing</h3>
-                <p class="text-[#A8B2D1] text-sm leading-relaxed">Configurez vos critères (modèle, score min, budget max) et recevez une notification dès qu'une opportunité correspond. Zéro bruit.</p>
+                <h3 class="font-display font-bold text-white text-lg mb-2" data-i18n="feat.f5t">Alertes sourcing</h3>
+                <p class="text-[#A8B2D1] text-sm leading-relaxed" data-i18n="feat.f5d">Configurez vos critères (modèle, score min, budget max) et recevez une notification dès qu'une opportunité correspond. Zéro bruit.</p>
             </div>
             <div class="card-glow p-7 reveal" style="transition-delay:0.16s">
                 <div class="feat-icon mb-5"><i class="fa-solid fa-filter"></i></div>
-                <h3 class="font-display font-bold text-white text-lg mb-2">Filtres pro avancés</h3>
-                <p class="text-[#A8B2D1] text-sm leading-relaxed">Prix, KM, année, marque, modèle, génération, carburant, source. Filtrage P95 pour éliminer les aberrants automatiquement.</p>
+                <h3 class="font-display font-bold text-white text-lg mb-2" data-i18n="feat.f6t">Filtres pro avancés</h3>
+                <p class="text-[#A8B2D1] text-sm leading-relaxed" data-i18n="feat.f6d">Prix, KM, année, marque, modèle, génération, carburant, source. Filtrage P95 pour éliminer les aberrants automatiquement.</p>
             </div>
         </div>
     </div>
@@ -309,87 +274,73 @@
 <section id="screenshots" class="py-24" style="background:#080F1E">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-            <div class="badge mb-4">Aperçu du produit</div>
-            <h2 class="font-display font-black text-3xl md:text-4xl text-white mb-4">Conçu pour décider vite</h2>
-            <p class="text-[#A8B2D1] text-lg">Un dashboard dense en information, zéro superflu.</p>
+            <div class="badge mb-4" data-i18n="sc.badge">Aperçu du produit</div>
+            <h2 class="font-display font-black text-3xl md:text-4xl text-white mb-4" data-i18n="sc.title">Conçu pour décider vite</h2>
+            <p class="text-[#A8B2D1] text-lg" data-i18n="sc.sub">Un dashboard dense en information, zéro superflu.</p>
         </div>
         <div class="space-y-16">
-
-            <!-- Screenshot 1 -->
             <div class="flex flex-col lg:flex-row items-center gap-10 reveal">
                 <div class="lg:w-1/2">
-                    <div class="badge mb-4">Recherche & Filtres</div>
-                    <h3 class="font-display font-bold text-2xl text-white mb-3">Toutes les annonces. Un seul endroit.</h3>
-                    <p class="text-[#A8B2D1] leading-relaxed mb-5">Le tableau agrège les annonces en temps réel. Triez par score IA, marge ou prix. La colonne <span class="font-mono text-signal text-xs bg-signal/10 px-1.5 py-0.5 rounded">MARGE €</span> change la donne : vous savez combien vous gagnez avant de décrocher le téléphone.</p>
+                    <div class="badge mb-4" data-i18n="sc.s1badge">Recherche & Filtres</div>
+                    <h3 class="font-display font-bold text-2xl text-white mb-3" data-i18n="sc.s1title">Toutes les annonces. Un seul endroit.</h3>
+                    <p class="text-[#A8B2D1] leading-relaxed mb-5" data-i18n="sc.s1desc">Le tableau agrège les annonces en temps réel. Triez par score IA, marge ou prix. La colonne <span class="font-mono text-signal text-xs bg-signal/10 px-1.5 py-0.5 rounded">MARGE €</span> change la donne.</p>
                     <ul class="space-y-2">
-                        <li class="flex items-center gap-2 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal text-xs w-4"></i> Score IA de 0 à 10 sur chaque annonce</li>
-                        <li class="flex items-center gap-2 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal text-xs w-4"></i> Marge estimée calculée automatiquement</li>
-                        <li class="flex items-center gap-2 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal text-xs w-4"></i> Filtrage par source, génération, carburant</li>
+                        <li class="flex items-center gap-2 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal text-xs w-4"></i> <span data-i18n="sc.s1l1">Score IA de 0 à 10 sur chaque annonce</span></li>
+                        <li class="flex items-center gap-2 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal text-xs w-4"></i> <span data-i18n="sc.s1l2">Marge estimée calculée automatiquement</span></li>
+                        <li class="flex items-center gap-2 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal text-xs w-4"></i> <span data-i18n="sc.s1l3">Filtrage par source, génération, carburant</span></li>
                     </ul>
                 </div>
                 <div class="lg:w-1/2 w-full">
                     <div class="browser-frame">
                         <div class="browser-dots">
-                            <div class="browser-dot bg-[#FF5F57]"></div>
-                            <div class="browser-dot bg-[#FFBD2E]"></div>
-                            <div class="browser-dot bg-[#28C840]"></div>
-                            <div class="flex-1 mx-3 bg-white/5 rounded px-2 py-0.5 text-[10px] text-[#A8B2D1]/40 font-mono">Recherche & Filtres</div>
+                            <div class="browser-dot bg-[#FF5F57]"></div><div class="browser-dot bg-[#FFBD2E]"></div><div class="browser-dot bg-[#28C840]"></div>
+                            <div class="flex-1 mx-3 bg-white/5 rounded px-2 py-0.5 text-[10px] text-[#A8B2D1]/40 font-mono" data-i18n="sc.s1badge">Recherche & Filtres</div>
                         </div>
-                        <img src="./assets/screenshots/search.jpg" alt="Recherche SpotMyCar" class="w-full">
+                        <img src="./assets/screenshots/search.jpg" alt="Recherche SpotMyCar" class="w-full screenshot-img">
                     </div>
                 </div>
             </div>
-
             <div class="section-divider"></div>
-
-            <!-- Screenshot 2 -->
             <div class="flex flex-col lg:flex-row-reverse items-center gap-10 reveal">
                 <div class="lg:w-1/2">
-                    <div class="badge mb-4">Tableau de bord</div>
-                    <h3 class="font-display font-bold text-2xl text-white mb-3">La matrice KM/Prix qui révèle tout.</h3>
-                    <p class="text-[#A8B2D1] leading-relaxed mb-5">Le nuage de points positionne chaque annonce sur le marché. Les points <span class="text-signal font-semibold">verts</span> sous la courbe de régression = annonces sous-cotées = opportunités réelles.</p>
+                    <div class="badge mb-4" data-i18n="sc.s2badge">Tableau de bord</div>
+                    <h3 class="font-display font-bold text-2xl text-white mb-3" data-i18n="sc.s2title">La matrice KM/Prix qui révèle tout.</h3>
+                    <p class="text-[#A8B2D1] leading-relaxed mb-5" data-i18n="sc.s2desc">Le nuage de points positionne chaque annonce sur le marché. Les points <span class="text-signal font-semibold">verts</span> sous la courbe = opportunités réelles.</p>
                     <ul class="space-y-2">
-                        <li class="flex items-center gap-2 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal text-xs w-4"></i> Courbe de régression du marché en temps réel</li>
-                        <li class="flex items-center gap-2 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal text-xs w-4"></i> Répartition des sources (Donut chart)</li>
-                        <li class="flex items-center gap-2 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal text-xs w-4"></i> Prix médian par modèle et distribution KM</li>
+                        <li class="flex items-center gap-2 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal text-xs w-4"></i> <span data-i18n="sc.s2l1">Courbe de régression du marché en temps réel</span></li>
+                        <li class="flex items-center gap-2 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal text-xs w-4"></i> <span data-i18n="sc.s2l2">Répartition des sources (Donut chart)</span></li>
+                        <li class="flex items-center gap-2 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal text-xs w-4"></i> <span data-i18n="sc.s2l3">Prix médian par modèle et distribution KM</span></li>
                     </ul>
                 </div>
                 <div class="lg:w-1/2 w-full">
                     <div class="browser-frame">
                         <div class="browser-dots">
-                            <div class="browser-dot bg-[#FF5F57]"></div>
-                            <div class="browser-dot bg-[#FFBD2E]"></div>
-                            <div class="browser-dot bg-[#28C840]"></div>
-                            <div class="flex-1 mx-3 bg-white/5 rounded px-2 py-0.5 text-[10px] text-[#A8B2D1]/40 font-mono">Vue d'ensemble</div>
+                            <div class="browser-dot bg-[#FF5F57]"></div><div class="browser-dot bg-[#FFBD2E]"></div><div class="browser-dot bg-[#28C840]"></div>
+                            <div class="flex-1 mx-3 bg-white/5 rounded px-2 py-0.5 text-[10px] text-[#A8B2D1]/40 font-mono" data-i18n="sc.s2badge">Vue d'ensemble</div>
                         </div>
-                        <img src="./assets/screenshots/dashboard.jpg" alt="Dashboard SpotMyCar" class="w-full">
+                        <img src="./assets/screenshots/dashboard.png" alt="Dashboard SpotMyCar" class="w-full screenshot-img">
                     </div>
                 </div>
             </div>
-
             <div class="section-divider"></div>
-
-            <!-- Screenshot 3 -->
             <div class="flex flex-col lg:flex-row items-center gap-10 reveal">
                 <div class="lg:w-1/2">
-                    <div class="badge mb-4">Alertes Sourcing</div>
-                    <h3 class="font-display font-bold text-2xl text-white mb-3">Soyez le premier à appeler.</h3>
-                    <p class="text-[#A8B2D1] leading-relaxed mb-5">Configurez une alerte sur un modèle précis avec vos critères de rentabilité. SpotMyCar vous notifie dès qu'une annonce correspond. Vous appelez avant tout le monde.</p>
+                    <div class="badge mb-4" data-i18n="sc.s3badge">Alertes Sourcing</div>
+                    <h3 class="font-display font-bold text-2xl text-white mb-3" data-i18n="sc.s3title">Soyez le premier à appeler.</h3>
+                    <p class="text-[#A8B2D1] leading-relaxed mb-5" data-i18n="sc.s3desc">Configurez une alerte sur un modèle précis avec vos critères de rentabilité. SpotMyCar vous notifie dès qu'une annonce correspond.</p>
                     <ul class="space-y-2">
-                        <li class="flex items-center gap-2 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal text-xs w-4"></i> Critères personnalisés par alerte</li>
-                        <li class="flex items-center gap-2 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal text-xs w-4"></i> Plusieurs alertes simultanées</li>
-                        <li class="flex items-center gap-2 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal text-xs w-4"></i> Notification instantanée in-app</li>
+                        <li class="flex items-center gap-2 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal text-xs w-4"></i> <span data-i18n="sc.s3l1">Critères personnalisés par alerte</span></li>
+                        <li class="flex items-center gap-2 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal text-xs w-4"></i> <span data-i18n="sc.s3l2">Plusieurs alertes simultanées</span></li>
+                        <li class="flex items-center gap-2 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal text-xs w-4"></i> <span data-i18n="sc.s3l3">Notification instantanée in-app</span></li>
                     </ul>
                 </div>
                 <div class="lg:w-1/2 w-full">
                     <div class="browser-frame">
                         <div class="browser-dots">
-                            <div class="browser-dot bg-[#FF5F57]"></div>
-                            <div class="browser-dot bg-[#FFBD2E]"></div>
-                            <div class="browser-dot bg-[#28C840]"></div>
-                            <div class="flex-1 mx-3 bg-white/5 rounded px-2 py-0.5 text-[10px] text-[#A8B2D1]/40 font-mono">Paramètres & Alertes</div>
+                            <div class="browser-dot bg-[#FF5F57]"></div><div class="browser-dot bg-[#FFBD2E]"></div><div class="browser-dot bg-[#28C840]"></div>
+                            <div class="flex-1 mx-3 bg-white/5 rounded px-2 py-0.5 text-[10px] text-[#A8B2D1]/40 font-mono" data-i18n="sc.s3badge">Paramètres & Alertes</div>
                         </div>
-                        <img src="./assets/screenshots/alerts.png" alt="Alertes SpotMyCar" class="w-full">
+                        <img src="./assets/screenshots/alerts.png" alt="Alertes SpotMyCar" class="w-full screenshot-img">
                     </div>
                 </div>
             </div>
@@ -402,66 +353,57 @@
 <section id="pricing" class="py-24" style="background:#0A192F">
     <div class="max-w-5xl mx-auto px-6">
         <div class="text-center max-w-2xl mx-auto mb-14 reveal">
-            <div class="badge mb-4">Tarifs</div>
-            <h2 class="font-display font-black text-3xl md:text-4xl text-white mb-4">Un abonnement. Toutes les fonctionnalités.</h2>
-            <p class="text-[#A8B2D1] text-lg">Sans engagement. Annulable à tout moment.</p>
+            <div class="badge mb-4" data-i18n="pr.badge">Tarifs</div>
+            <h2 class="font-display font-black text-3xl md:text-4xl text-white mb-4" data-i18n="pr.title">Un abonnement. Toutes les fonctionnalités.</h2>
+            <p class="text-[#A8B2D1] text-lg" data-i18n="pr.sub">Sans engagement. Annulable à tout moment.</p>
         </div>
         <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-
             <!-- REGIONAL -->
             <div class="pricing-active rounded-2xl p-8 relative reveal">
-                <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span class="bg-signal text-midnight text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-wide">Disponible maintenant</span>
-                </div>
-                <div class="mb-6 pt-2">
-                    <h3 class="font-display font-bold text-white text-xl mb-1">Régional</h3>
-                    <p class="text-[#A8B2D1] text-sm">Couverture locale · Sud-Ouest</p>
+                <div class="mb-6">
+                    <h3 class="font-display font-bold text-white text-xl mb-1" data-i18n="pr.regional">Régional</h3>
+                    <p class="text-[#A8B2D1] text-sm" data-i18n="pr.coverage">Couverture locale · Sud-Est</p>
                 </div>
                 <div class="mb-6">
                     <span class="font-mono text-white text-5xl font-medium">49</span>
                     <span class="text-[#A8B2D1] text-lg">€<span class="text-sm">/mois</span></span>
-                    <p class="text-[#A8B2D1] text-xs mt-1">Sans engagement · Résiliation en 1 clic</p>
+                    <p class="text-[#A8B2D1] text-xs mt-1" data-i18n="pr.nocommit">Sans engagement · Résiliation en 1 clic</p>
                 </div>
-                <button onclick="openAuthModal('register')" class="btn-primary w-full py-3.5 text-sm mb-7">
-                    Commencer maintenant →
-                </button>
+                <button onclick="openAuthModal('register')" class="btn-primary w-full py-3.5 text-sm mb-7" data-i18n="pr.cta">Commencer maintenant →</button>
                 <ul class="space-y-3">
-                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal mt-0.5 text-xs w-4 flex-shrink-0"></i><span>Agrégation <strong class="text-white">3 sources</strong> en temps réel</span></li>
-                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal mt-0.5 text-xs w-4 flex-shrink-0"></i><span>Score IA /10 sur chaque annonce</span></li>
-                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal mt-0.5 text-xs w-4 flex-shrink-0"></i><span>Estimation de marge réelle automatique</span></li>
-                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal mt-0.5 text-xs w-4 flex-shrink-0"></i><span>Matrice KM/Prix interactive</span></li>
-                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal mt-0.5 text-xs w-4 flex-shrink-0"></i><span>Alertes sourcing illimitées</span></li>
-                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal mt-0.5 text-xs w-4 flex-shrink-0"></i><span>Filtres avancés (modèle, génération, source...)</span></li>
-                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal mt-0.5 text-xs w-4 flex-shrink-0"></i><span>Accès web · desktop & mobile</span></li>
+                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal mt-0.5 text-xs w-4 flex-shrink-0"></i><span data-i18n="pr.f1">Agrégation <strong class="text-white">3 sources</strong> en temps réel</span></li>
+                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal mt-0.5 text-xs w-4 flex-shrink-0"></i><span data-i18n="pr.f2">Score IA /10 sur chaque annonce</span></li>
+                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal mt-0.5 text-xs w-4 flex-shrink-0"></i><span data-i18n="pr.f3">Estimation de marge réelle automatique</span></li>
+                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal mt-0.5 text-xs w-4 flex-shrink-0"></i><span data-i18n="pr.f4">Matrice KM/Prix interactive</span></li>
+                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal mt-0.5 text-xs w-4 flex-shrink-0"></i><span data-i18n="pr.f5">Alertes sourcing illimitées</span></li>
+                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal mt-0.5 text-xs w-4 flex-shrink-0"></i><span data-i18n="pr.f6">Filtres avancés (modèle, génération, source...)</span></li>
+                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]"><i class="fa-solid fa-check text-signal mt-0.5 text-xs w-4 flex-shrink-0"></i><span data-i18n="pr.f7">Accès web · desktop & mobile</span></li>
                 </ul>
                 <div class="mt-6 pt-6 border-t border-white/8">
                     <p class="text-[#A8B2D1]/60 text-xs flex items-center gap-2">
                         <i class="fa-solid fa-shield-halved text-signal/60"></i>
-                        Droit de rétractation 14 jours — remboursement intégral garanti.
+                        <span data-i18n="pr.retract">Droit de rétractation 14 jours — remboursement intégral garanti.</span>
                     </p>
                 </div>
             </div>
-
             <!-- NATIONAL -->
             <div class="coming-soon-overlay card-glow p-8 relative reveal" style="transition-delay:0.1s">
-                <div class="coming-soon-badge">Bientôt disponible</div>
+                <div class="coming-soon-badge" data-i18n="pr.soon">Bientôt disponible</div>
                 <div class="mb-6">
-                    <h3 class="font-display font-bold text-white text-xl mb-1">National</h3>
-                    <p class="text-[#A8B2D1] text-sm">Couverture France entière</p>
+                    <h3 class="font-display font-bold text-white text-xl mb-1" data-i18n="pr.national">National</h3>
+                    <p class="text-[#A8B2D1] text-sm" data-i18n="pr.natcoverage">Couverture France entière</p>
                 </div>
                 <div class="mb-6">
                     <span class="font-mono text-white text-5xl font-medium">—</span>
-                    <p class="text-[#A8B2D1] text-xs mt-3">Tarif en cours de définition</p>
+                    <p class="text-[#A8B2D1] text-xs mt-3" data-i18n="pr.tbd">Tarif en cours de définition</p>
                 </div>
-                <div class="w-full py-3.5 text-sm mb-7 rounded-lg border border-white/10 text-center text-[#A8B2D1]/60 font-semibold cursor-not-allowed">
-                    Disponible prochainement
-                </div>
+                <div class="w-full py-3.5 text-sm mb-7 rounded-lg border border-white/10 text-center text-[#A8B2D1]/60 font-semibold cursor-not-allowed" data-i18n="pr.comingsoon">Disponible prochainement</div>
                 <ul class="space-y-3">
-                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]/70"><i class="fa-solid fa-check text-signal/50 mt-0.5 text-xs w-4 flex-shrink-0"></i><span>Tout le plan Régional</span></li>
-                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]/70"><i class="fa-solid fa-check text-signal/50 mt-0.5 text-xs w-4 flex-shrink-0"></i><span>Couverture nationale · toutes régions</span></li>
-                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]/70"><i class="fa-solid fa-check text-signal/50 mt-0.5 text-xs w-4 flex-shrink-0"></i><span>7+ sources agrégées</span></li>
+                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]/70"><i class="fa-solid fa-check text-signal/50 mt-0.5 text-xs w-4 flex-shrink-0"></i><span data-i18n="pr.n1">Tout le plan Régional</span></li>
+                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]/70"><i class="fa-solid fa-check text-signal/50 mt-0.5 text-xs w-4 flex-shrink-0"></i><span data-i18n="pr.n2">Couverture nationale · toutes régions</span></li>
+                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]/70"><i class="fa-solid fa-check text-signal/50 mt-0.5 text-xs w-4 flex-shrink-0"></i><span data-i18n="pr.n3">7+ sources agrégées</span></li>
                     <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]/70"><i class="fa-solid fa-clock text-[#A8B2D1]/40 mt-0.5 text-xs w-4 flex-shrink-0"></i><span>Alertes SMS <span class="text-[10px] bg-white/10 text-[#A8B2D1]/60 px-1.5 py-0.5 rounded ml-1">Coming soon</span></span></li>
-                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]/70"><i class="fa-solid fa-clock text-[#A8B2D1]/40 mt-0.5 text-xs w-4 flex-shrink-0"></i><span>Analyse photos par IA <span class="text-[10px] bg-white/10 text-[#A8B2D1]/60 px-1.5 py-0.5 rounded ml-1">Coming soon</span></span></li>
+                    <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]/70"><i class="fa-solid fa-clock text-[#A8B2D1]/40 mt-0.5 text-xs w-4 flex-shrink-0"></i><span>Analyse photos IA <span class="text-[10px] bg-white/10 text-[#A8B2D1]/60 px-1.5 py-0.5 rounded ml-1">Coming soon</span></span></li>
                     <li class="flex items-start gap-2.5 text-sm text-[#A8B2D1]/70"><i class="fa-solid fa-clock text-[#A8B2D1]/40 mt-0.5 text-xs w-4 flex-shrink-0"></i><span>Historique des prix <span class="text-[10px] bg-white/10 text-[#A8B2D1]/60 px-1.5 py-0.5 rounded ml-1">Coming soon</span></span></li>
                 </ul>
             </div>
@@ -473,21 +415,34 @@
 <section class="py-24 relative overflow-hidden" style="background:#080F1E">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-signal/4 blur-[150px] rounded-full pointer-events-none"></div>
     <div class="max-w-3xl mx-auto px-6 text-center relative z-10 reveal">
-        <h2 class="font-display font-black text-3xl md:text-5xl text-white mb-4 leading-tight">
+        <h2 class="font-display font-black text-3xl md:text-5xl text-white mb-4 leading-tight" data-i18n="cta.title">
             Détectez la pépite.<br><span class="text-gradient">Avant tout le monde.</span>
         </h2>
-        <p class="text-[#A8B2D1] text-lg mb-8 max-w-lg mx-auto">Rejoignez SpotMyCar et transformez votre sourcing en avantage concurrentiel durable.</p>
+        <p class="text-[#A8B2D1] text-lg mb-8 max-w-lg mx-auto" data-i18n="cta.sub">Rejoignez SpotMyCar et transformez votre sourcing en avantage concurrentiel durable.</p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
             <button onclick="openAuthModal('register')" class="btn-primary px-10 py-4 text-base flex items-center justify-center gap-2">
-                Commencer — 49€/mois <i class="fa-solid fa-arrow-right"></i>
+                <span data-i18n="cta.cta">Commencer — 49€/mois</span> <i class="fa-solid fa-arrow-right"></i>
             </button>
-            <button onclick="openAuthModal('login')" class="px-8 py-4 text-base font-semibold text-[#A8B2D1] hover:text-white border border-white/10 hover:border-white/25 rounded-lg transition-all">
-                J'ai déjà un compte
-            </button>
+            <button onclick="openAuthModal('login')" class="px-8 py-4 text-base font-semibold text-[#A8B2D1] hover:text-white border border-white/10 hover:border-white/25 rounded-lg transition-all" data-i18n="cta.login">J'ai déjà un compte</button>
         </div>
-        <p class="mt-4 text-[#A8B2D1]/50 text-xs">Sans engagement · Rétractation 14 jours · Résiliation en 1 clic</p>
+        <p class="mt-4 text-[#A8B2D1]/50 text-xs" data-i18n="cta.legal">Sans engagement · Rétractation 14 jours · Résiliation en 1 clic</p>
     </div>
 </section>
+
+<!-- PÉPITE PACA-EST -->
+<div class="border-t border-white/5 py-8" style="background:#0A192F">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+        <span class="text-[#A8B2D1]/50 text-sm" data-i18n="pepite.label">Projet soutenu par</span>
+        <a href="https://pepite-france.fr" target="_blank" rel="noopener" class="flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity">
+            <div class="px-3 py-1.5 border border-white/15 rounded-lg flex items-center gap-2">
+                <i class="fa-solid fa-seedling text-signal text-sm"></i>
+                <span class="text-white font-display font-bold text-sm tracking-wide">Pépite <span class="text-signal">PACA-Est</span></span>
+            </div>
+        </a>
+        <span class="text-[#A8B2D1]/30 text-xs hidden sm:block">·</span>
+        <span class="text-[#A8B2D1]/40 text-xs" data-i18n="pepite.desc">Programme national d'entrepreneuriat étudiant</span>
+    </div>
+</div>
 
 <!-- FOOTER -->
 <footer class="border-t border-white/5 py-10" style="background:#0A192F">
@@ -500,51 +455,60 @@
         </div>
         <p class="text-[#A8B2D1]/40 text-sm">© 2026 SpotMyCar — Tous droits réservés</p>
         <div class="flex gap-5">
-            <a href="#" class="text-[#A8B2D1]/40 hover:text-signal text-sm transition-colors">Mentions légales</a>
+            <a href="#" class="text-[#A8B2D1]/40 hover:text-signal text-sm transition-colors" data-i18n="footer.legal">Mentions légales</a>
             <a href="#" class="text-[#A8B2D1]/40 hover:text-signal text-sm transition-colors">CGV</a>
         </div>
     </div>
 </footer>
 
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="">
+</div>
+
 <!-- AUTH MODAL -->
 <div id="auth-modal" class="fixed inset-0 z-[100] flex items-center justify-center hidden">
     <div onclick="closeAuthModal()" class="absolute inset-0 bg-black/75 backdrop-blur-sm"></div>
-    <div class="relative w-full max-w-md mx-4 rounded-2xl p-8 z-10 shadow-2xl" style="background:#112240; border:1px solid rgba(255,255,255,0.08)">
+    <div class="relative w-full max-w-md mx-4 rounded-2xl p-8 z-10 shadow-2xl" style="background:#112240;border:1px solid rgba(255,255,255,0.08)">
         <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-[#A8B2D1] hover:text-white transition-colors"><i class="fa-solid fa-xmark text-xl"></i></button>
         <div class="flex items-center gap-2 mb-6">
             <div class="w-8 h-8 bg-signal rounded-lg flex items-center justify-center"><i class="fa-solid fa-crosshairs text-midnight text-sm"></i></div>
             <span class="font-display font-bold text-xl text-white">Spot<span class="text-signal">MyCar</span></span>
         </div>
         <div class="flex gap-1 rounded-lg p-1 mb-6" style="background:rgba(255,255,255,0.05)">
-            <button id="tab-login" onclick="switchAuthTab('login')" class="flex-1 py-2 rounded-md text-sm font-semibold transition-all" style="background:#00E676; color:#0A192F">Connexion</button>
+            <button id="tab-login" onclick="switchAuthTab('login')" class="flex-1 py-2 rounded-md text-sm font-semibold transition-all" style="background:#00E676;color:#0A192F">Connexion</button>
             <button id="tab-register" onclick="switchAuthTab('register')" class="flex-1 py-2 rounded-md text-sm font-semibold transition-all" style="color:#A8B2D1">Inscription</button>
         </div>
-        <div id="auth-error" class="hidden mb-4 px-4 py-3 rounded-lg text-red-400 text-sm" style="background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.2)"></div>
-        <div id="auth-success" class="hidden mb-4 px-4 py-3 rounded-lg text-sm" style="background:rgba(0,230,118,0.08); border:1px solid rgba(0,230,118,0.2); color:#00E676"></div>
+        <div id="auth-error" class="hidden mb-4 px-4 py-3 rounded-lg text-red-400 text-sm" style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2)"></div>
+        <div id="auth-success" class="hidden mb-4 px-4 py-3 rounded-lg text-sm" style="background:rgba(0,230,118,0.08);border:1px solid rgba(0,230,118,0.2);color:#00E676"></div>
         <button type="button" onclick="handleGoogleAuth()" class="w-full py-3 bg-white hover:bg-gray-50 text-gray-800 font-semibold rounded-lg transition-all text-sm flex items-center justify-center gap-3 mb-5">
             <svg width="16" height="16" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
             Continuer avec Google
         </button>
-        <div class="flex items-center gap-3 mb-5"><div class="flex-1 h-px" style="background:rgba(255,255,255,0.08)"></div><span class="text-xs text-[#A8B2D1]">ou</span><div class="flex-1 h-px" style="background:rgba(255,255,255,0.08)"></div></div>
+        <div class="flex items-center gap-3 mb-5">
+            <div class="flex-1 h-px" style="background:rgba(255,255,255,0.08)"></div>
+            <span class="text-xs text-[#A8B2D1]">ou</span>
+            <div class="flex-1 h-px" style="background:rgba(255,255,255,0.08)"></div>
+        </div>
         <form id="form-login" onsubmit="handleLogin(event)" class="space-y-4">
             <div>
                 <label class="block text-xs font-bold uppercase mb-1.5 text-[#A8B2D1]" style="letter-spacing:0.06em">Email</label>
-                <input id="login-email" type="email" required placeholder="vous@exemple.com" class="w-full px-4 py-3 rounded-lg text-white text-sm placeholder-slate-500 focus:outline-none" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1)">
+                <input id="login-email" type="email" required placeholder="vous@exemple.com" class="w-full px-4 py-3 rounded-lg text-white text-sm placeholder-slate-500 focus:outline-none" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1)">
             </div>
             <div>
                 <label class="block text-xs font-bold uppercase mb-1.5 text-[#A8B2D1]" style="letter-spacing:0.06em">Mot de passe</label>
-                <input id="login-password" type="password" required placeholder="••••••••" class="w-full px-4 py-3 rounded-lg text-white text-sm placeholder-slate-500 focus:outline-none" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1)">
+                <input id="login-password" type="password" required placeholder="••••••••" class="w-full px-4 py-3 rounded-lg text-white text-sm placeholder-slate-500 focus:outline-none" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1)">
             </div>
             <button type="submit" id="login-btn" class="btn-primary w-full py-3 text-sm">Se connecter →</button>
         </form>
         <form id="form-register" onsubmit="handleRegister(event)" class="space-y-4 hidden">
             <div>
                 <label class="block text-xs font-bold uppercase mb-1.5 text-[#A8B2D1]" style="letter-spacing:0.06em">Email</label>
-                <input id="register-email" type="email" required placeholder="vous@exemple.com" class="w-full px-4 py-3 rounded-lg text-white text-sm placeholder-slate-500 focus:outline-none" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1)">
+                <input id="register-email" type="email" required placeholder="vous@exemple.com" class="w-full px-4 py-3 rounded-lg text-white text-sm placeholder-slate-500 focus:outline-none" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1)">
             </div>
             <div>
                 <label class="block text-xs font-bold uppercase mb-1.5 text-[#A8B2D1]" style="letter-spacing:0.06em">Mot de passe</label>
-                <input id="register-password" type="password" required placeholder="8 caractères minimum" class="w-full px-4 py-3 rounded-lg text-white text-sm placeholder-slate-500 focus:outline-none" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1)">
+                <input id="register-password" type="password" required placeholder="8 caractères minimum" class="w-full px-4 py-3 rounded-lg text-white text-sm placeholder-slate-500 focus:outline-none" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1)">
             </div>
             <button type="submit" id="register-btn" class="btn-primary w-full py-3 text-sm">Créer mon compte →</button>
         </form>
@@ -554,6 +518,90 @@
 <!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
+var T = {
+  fr: {
+    "nav.features":"Fonctionnalités","nav.preview":"Aperçu","nav.pricing":"Tarifs","nav.login":"Se connecter","nav.cta":"Commencer →",
+    "hero.badge":"Accès ouvert · Région Sud-Est",
+    "hero.title":"Moins de recherche.<br><span class=\"text-gradient\">Plus de marge.</span>",
+    "hero.desc":"SpotMyCar agrège les annonces de plusieurs plateformes, les analyse avec un score IA et vous remonte uniquement les <strong class=\"text-white\">opportunités rentables</strong> — en temps réel.",
+    "hero.stat1":"sources agrégées","hero.stat2":"marge moy. détectée","hero.stat3":"nouvelles annonces/jour",
+    "hero.cta":"Accéder à SpotMyCar","hero.see":"Voir l'outil","mock.title":"Annonces du jour",
+    "strip.s1":"annonces analysées/jour","strip.s2":"sources en temps réel","strip.s3":"marge moy. détectée","strip.s4":"sur chaque annonce",
+    "feat.badge":"Fonctionnalités","feat.title":"Un analyste virtuel qui tourne 24h/24","feat.sub":"Pendant que vous dormez, SpotMyCar scrute les plateformes et identifie les pépites.",
+    "feat.f1t":"Agrégation multi-sources","feat.f1d":"3 plateformes surveillées en continu. Toutes les annonces en un seul tableau de bord, sans aller-retour entre les sites.",
+    "feat.f2t":"Score IA /10","feat.f2d":"Chaque annonce reçoit un score calculé sur le prix, le kilométrage, l'année et le marché local.",
+    "feat.f3t":"Estimation de marge réelle","feat.f3d":"Colonne MARGE € calculée en temps réel. Vous savez exactement combien vous pouvez gagner avant d'appeler.",
+    "feat.f4t":"Matrice KM / Prix","feat.f4d":"Visualisez les annonces sur un graphique prix vs kilométrage. Les points verts sous la courbe = bonnes affaires.",
+    "feat.f5t":"Alertes sourcing","feat.f5d":"Configurez vos critères et recevez une notification dès qu'une opportunité correspond. Zéro bruit.",
+    "feat.f6t":"Filtres pro avancés","feat.f6d":"Prix, KM, année, marque, modèle, génération, carburant, source. Filtrage P95 automatique.",
+    "sc.badge":"Aperçu du produit","sc.title":"Conçu pour décider vite","sc.sub":"Un dashboard dense en information, zéro superflu.",
+    "sc.s1badge":"Recherche & Filtres","sc.s1title":"Toutes les annonces. Un seul endroit.","sc.s1desc":"Le tableau agrège les annonces en temps réel. Triez par score IA, marge ou prix.",
+    "sc.s1l1":"Score IA de 0 à 10 sur chaque annonce","sc.s1l2":"Marge estimée calculée automatiquement","sc.s1l3":"Filtrage par source, génération, carburant",
+    "sc.s2badge":"Tableau de bord","sc.s2title":"La matrice KM/Prix qui révèle tout.","sc.s2desc":"Les points verts sous la courbe de régression = annonces sous-cotées = opportunités réelles.",
+    "sc.s2l1":"Courbe de régression du marché en temps réel","sc.s2l2":"Répartition des sources (Donut chart)","sc.s2l3":"Prix médian par modèle et distribution KM",
+    "sc.s3badge":"Alertes Sourcing","sc.s3title":"Soyez le premier à appeler.","sc.s3desc":"SpotMyCar vous notifie dès qu'une annonce correspond à vos critères. Vous appelez avant tout le monde.",
+    "sc.s3l1":"Critères personnalisés par alerte","sc.s3l2":"Plusieurs alertes simultanées","sc.s3l3":"Notification instantanée in-app",
+    "pr.badge":"Tarifs","pr.title":"Un abonnement. Toutes les fonctionnalités.","pr.sub":"Sans engagement. Annulable à tout moment.",
+    "pr.regional":"Régional","pr.coverage":"Couverture locale · Sud-Est","pr.nocommit":"Sans engagement · Résiliation en 1 clic","pr.cta":"Commencer maintenant →",
+    "pr.f1":"Agrégation <strong class=\"text-white\">3 sources</strong> en temps réel","pr.f2":"Score IA /10 sur chaque annonce","pr.f3":"Estimation de marge réelle automatique",
+    "pr.f4":"Matrice KM/Prix interactive","pr.f5":"Alertes sourcing illimitées","pr.f6":"Filtres avancés (modèle, génération, source...)","pr.f7":"Accès web · desktop & mobile",
+    "pr.retract":"Droit de rétractation 14 jours — remboursement intégral garanti.",
+    "pr.soon":"Bientôt disponible","pr.national":"National","pr.natcoverage":"Couverture France entière","pr.tbd":"Tarif en cours de définition","pr.comingsoon":"Disponible prochainement",
+    "pr.n1":"Tout le plan Régional","pr.n2":"Couverture nationale · toutes régions","pr.n3":"7+ sources agrégées",
+    "cta.title":"Détectez la pépite.<br><span class=\"text-gradient\">Avant tout le monde.</span>",
+    "cta.sub":"Rejoignez SpotMyCar et transformez votre sourcing en avantage concurrentiel durable.",
+    "cta.cta":"Commencer — 49€/mois","cta.login":"J'ai déjà un compte","cta.legal":"Sans engagement · Rétractation 14 jours · Résiliation en 1 clic",
+    "pepite.label":"Projet soutenu par","pepite.desc":"Programme national d'entrepreneuriat étudiant","footer.legal":"Mentions légales"
+  },
+  en: {
+    "nav.features":"Features","nav.preview":"Preview","nav.pricing":"Pricing","nav.login":"Sign in","nav.cta":"Get started →",
+    "hero.badge":"Open access · South-East Region",
+    "hero.title":"Less searching.<br><span class=\"text-gradient\">More margin.</span>",
+    "hero.desc":"SpotMyCar aggregates listings from multiple platforms, analyzes them with an AI score and surfaces only <strong class=\"text-white\">profitable opportunities</strong> — in real time.",
+    "hero.stat1":"aggregated sources","hero.stat2":"avg. margin detected","hero.stat3":"new listings/day",
+    "hero.cta":"Access SpotMyCar","hero.see":"See the tool","mock.title":"Today's listings",
+    "strip.s1":"listings analyzed/day","strip.s2":"real-time sources","strip.s3":"avg. margin detected","strip.s4":"on every listing",
+    "feat.badge":"Features","feat.title":"A virtual analyst running 24/7","feat.sub":"While you sleep, SpotMyCar scans platforms and identifies hidden gems.",
+    "feat.f1t":"Multi-source aggregation","feat.f1d":"3 platforms monitored continuously. All listings in one dashboard, no more tab switching.",
+    "feat.f2t":"AI Score /10","feat.f2d":"Every listing gets a score based on price, mileage, year and local market. No more guessing.",
+    "feat.f3t":"Real margin estimate","feat.f3d":"MARGIN € column calculated in real time. You know exactly how much you can make before calling.",
+    "feat.f4t":"KM / Price Matrix","feat.f4d":"Visualize listings on a price vs mileage chart. Green dots below the curve = underpriced = real opportunities.",
+    "feat.f5t":"Sourcing alerts","feat.f5d":"Set your criteria and get notified the moment a match appears. Zero noise.",
+    "feat.f6t":"Advanced pro filters","feat.f6d":"Price, KM, year, brand, model, generation, fuel, source. P95 filtering removes outliers automatically.",
+    "sc.badge":"Product preview","sc.title":"Built to decide fast","sc.sub":"Information-dense dashboard, zero clutter.",
+    "sc.s1badge":"Search & Filters","sc.s1title":"All listings. One place.","sc.s1desc":"The table aggregates listings in real time. Sort by AI score, margin or price.",
+    "sc.s1l1":"AI score 0 to 10 on every listing","sc.s1l2":"Estimated margin calculated automatically","sc.s1l3":"Filter by source, generation, fuel type",
+    "sc.s2badge":"Dashboard","sc.s2title":"The KM/Price matrix that reveals all.","sc.s2desc":"Green dots below the regression curve = underpriced listings = real opportunities.",
+    "sc.s2l1":"Market regression curve in real time","sc.s2l2":"Source breakdown (Donut chart)","sc.s2l3":"Median price by model and KM distribution",
+    "sc.s3badge":"Sourcing Alerts","sc.s3title":"Be the first to call.","sc.s3desc":"SpotMyCar notifies you the moment a listing matches your criteria. You call before anyone else.",
+    "sc.s3l1":"Custom criteria per alert","sc.s3l2":"Multiple simultaneous alerts","sc.s3l3":"Instant in-app notification",
+    "pr.badge":"Pricing","pr.title":"One subscription. All features.","pr.sub":"No commitment. Cancel anytime.",
+    "pr.regional":"Regional","pr.coverage":"Local coverage · South-East","pr.nocommit":"No commitment · Cancel in 1 click","pr.cta":"Start now →",
+    "pr.f1":"<strong class=\"text-white\">3 sources</strong> aggregated in real time","pr.f2":"AI score /10 on every listing","pr.f3":"Automatic real margin estimate",
+    "pr.f4":"Interactive KM/Price matrix","pr.f5":"Unlimited sourcing alerts","pr.f6":"Advanced filters (model, generation, source...)","pr.f7":"Web access · desktop & mobile",
+    "pr.retract":"14-day withdrawal right — full refund guaranteed.",
+    "pr.soon":"Coming soon","pr.national":"National","pr.natcoverage":"Full France coverage","pr.tbd":"Pricing to be announced","pr.comingsoon":"Coming soon",
+    "pr.n1":"Everything in Regional","pr.n2":"National coverage · all regions","pr.n3":"7+ aggregated sources",
+    "cta.title":"Spot the gem.<br><span class=\"text-gradient\">Before anyone else.</span>",
+    "cta.sub":"Join SpotMyCar and turn your sourcing into a lasting competitive edge.",
+    "cta.cta":"Start — €49/month","cta.login":"I already have an account","cta.legal":"No commitment · 14-day withdrawal · Cancel in 1 click",
+    "pepite.label":"Project supported by","pepite.desc":"National student entrepreneurship program","footer.legal":"Legal notice"
+  }
+};
+
+var currentLang = 'fr';
+window.setLang = function(lang) {
+    currentLang = lang;
+    var t = T[lang];
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+    ['btn-fr','btn-fr-m'].forEach(function(id){ var b=document.getElementById(id); if(b) b.className='lang-btn'+(lang==='fr'?' active':''); });
+    ['btn-en','btn-en-m'].forEach(function(id){ var b=document.getElementById(id); if(b) b.className='lang-btn'+(lang==='en'?' active':''); });
+    document.documentElement.lang = lang;
+};
+
 (function() {
     var sb = supabase.createClient(
         'https://lrlskgxzrkjotcxevzag.supabase.co',
@@ -563,56 +611,51 @@
 
     window.openAuthModal  = function(tab) { document.getElementById('auth-modal').classList.remove('hidden'); switchAuthTab(tab||'login'); clearMsg(); };
     window.closeAuthModal = function()    { document.getElementById('auth-modal').classList.add('hidden'); clearMsg(); };
-
-    window.switchAuthTab = function(tab) {
-        var isLogin = tab === 'login';
-        document.getElementById('form-login').classList.toggle('hidden', !isLogin);
-        document.getElementById('form-register').classList.toggle('hidden', isLogin);
+    window.switchAuthTab  = function(tab) {
+        var isLogin = tab==='login';
+        document.getElementById('form-login').classList.toggle('hidden',!isLogin);
+        document.getElementById('form-register').classList.toggle('hidden',isLogin);
         document.getElementById('tab-login').style.cssText    = isLogin  ? 'background:#00E676;color:#0A192F' : 'background:transparent;color:#A8B2D1';
         document.getElementById('tab-register').style.cssText = !isLogin ? 'background:#00E676;color:#0A192F' : 'background:transparent;color:#A8B2D1';
         clearMsg();
     };
-
-    function clearMsg() { ['auth-error','auth-success'].forEach(function(id){ document.getElementById(id).classList.add('hidden'); }); }
-    function showErr(m)  { var e=document.getElementById('auth-error');   e.textContent=m; e.classList.remove('hidden'); }
-    function showOk(m)   { var e=document.getElementById('auth-success'); e.textContent=m; e.classList.remove('hidden'); }
+    function clearMsg(){ ['auth-error','auth-success'].forEach(function(id){ document.getElementById(id).classList.add('hidden'); }); }
+    function showErr(m){ var e=document.getElementById('auth-error'); e.textContent=m; e.classList.remove('hidden'); }
+    function showOk(m) { var e=document.getElementById('auth-success'); e.textContent=m; e.classList.remove('hidden'); }
 
     window.handleGoogleAuth = async function() {
         var r = await sb.auth.signInWithOAuth({ provider:'google', options:{ redirectTo: APP_URL } });
         if (r.error) showErr('Erreur Google : '+r.error.message);
     };
-
     window.handleLogin = async function(e) {
         e.preventDefault(); clearMsg();
-        var btn=document.getElementById('login-btn'); btn.textContent='Connexion...'; btn.disabled=true;
-        var r = await sb.auth.signInWithPassword({ email: document.getElementById('login-email').value, password: document.getElementById('login-password').value });
+        var btn=document.getElementById('login-btn'); btn.textContent='...'; btn.disabled=true;
+        var r = await sb.auth.signInWithPassword({ email:document.getElementById('login-email').value, password:document.getElementById('login-password').value });
         if (r.error) { showErr('Email ou mot de passe incorrect.'); btn.textContent='Se connecter →'; btn.disabled=false; }
-        else { showOk('Connexion réussie ! Redirection...'); setTimeout(function(){ window.location.href = APP_URL; }, 1200); }
+        else { showOk('Connexion réussie ! Redirection...'); setTimeout(function(){ window.location.href=APP_URL; },1200); }
     };
-
     window.handleRegister = async function(e) {
         e.preventDefault(); clearMsg();
-        var btn=document.getElementById('register-btn'); btn.textContent='Création...'; btn.disabled=true;
-        var r = await sb.auth.signUp({ email: document.getElementById('register-email').value, password: document.getElementById('register-password').value });
+        var btn=document.getElementById('register-btn'); btn.textContent='...'; btn.disabled=true;
+        var r = await sb.auth.signUp({ email:document.getElementById('register-email').value, password:document.getElementById('register-password').value });
         if (r.error) showErr(r.error.message);
-        else { showOk('Compte créé ! Vérifie ta boîte mail pour confirmer, puis connecte-toi.'); document.getElementById('form-register').reset(); }
+        else { showOk('Compte créé ! Vérifie ta boîte mail pour confirmer.'); document.getElementById('form-register').reset(); }
         btn.textContent='Créer mon compte →'; btn.disabled=false;
     };
-
-    document.addEventListener('keydown', function(e){ if(e.key==='Escape') window.closeAuthModal(); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ window.closeAuthModal(); closeLightbox(); } });
 })();
 
-document.addEventListener('DOMContentLoaded', function() {
-    var btn = document.getElementById('mobile-menu-btn');
-    var menu = document.getElementById('mobile-menu');
-    if (btn && menu) btn.addEventListener('click', function(){ menu.classList.toggle('hidden'); });
+window.closeLightbox = function() { document.getElementById('lightbox').classList.remove('open'); };
 
-    var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
+document.addEventListener('DOMContentLoaded', function() {
+    var btn=document.getElementById('mobile-menu-btn'), menu=document.getElementById('mobile-menu');
+    if(btn&&menu) btn.addEventListener('click',function(){ menu.classList.toggle('hidden'); });
+    var observer=new IntersectionObserver(function(entries){ entries.forEach(function(entry){ if(entry.isIntersecting) entry.target.classList.add('visible'); }); },{threshold:0.1});
     document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
+    document.querySelectorAll('.screenshot-img').forEach(function(img){
+        img.addEventListener('click',function(e){ e.stopPropagation(); document.getElementById('lightbox-img').src=img.src; document.getElementById('lightbox').classList.add('open'); });
+    });
 });
 </script>
-
 </body>
 </html>
