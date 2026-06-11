@@ -638,6 +638,9 @@ window.setLang = function(lang) {
 
     const { data, error } = await supabase.auth.signInWithPassword({ email, password });
 
+    console.log('LOGIN data:', JSON.stringify(data));
+    console.log('LOGIN error:', JSON.stringify(error));
+
     if (error) {
         showError(error.message);
         btn.textContent = 'Se connecter →'; btn.disabled = false;
