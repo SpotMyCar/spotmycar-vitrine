@@ -627,21 +627,55 @@ window.setLang = function(lang) {
         var r = await sb.auth.signInWithOAuth({ provider:'google', options:{ redirectTo: APP_URL } });
         if (r.error) showErr('Erreur Google : '+r.error.message);
     };
-    window.handleLogin = async function(e) {
-        e.preventDefault(); clearMsg();
-        var btn=document.getElementById('login-btn'); btn.textContent='...'; btn.disabled=true;
-        var r = await sb.auth.signInWithPassword({ email:document.getElementById('login-email').value, password:document.getElementById('login-password').value });
-        if (r.error) { showErr('Email ou mot de passe incorrect.'); btn.textContent='Se connecter →'; btn.disabled=false; }
-        else { showOk('Connexion réussie ! Redirection...'); setTimeout(function(){ window.location.href=APP_URL; },1200); }
-    };
-    window.handleRegister = async function(e) {
-        e.preventDefault(); clearMsg();
-        var btn=document.getElementById('register-btn'); btn.textContent='...'; btn.disabled=true;
-        var r = await sb.auth.signUp({ email:document.getElementById('register-email').value, password:document.getElementById('register-password').value });
-        if (r.error) showErr(r.error.message);
-        else { showOk('Compte créé ! Vérifie ta boîte mail pour confirmer.'); document.getElementById('form-register').reset(); }
-        btn.textContent='Créer mon compte →'; btn.disabled=false;
-    };
+    async function handleLogin(event) {
+    event.preventDefault();
+    const btn = document.getElementById('login-btn');
+    btn.textContent = 'Connexion...'; btn.disabled = true;
+    hideMessages();
+
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+
+    if (error) {
+        showError(error.message);
+        btn.textContent = 'Se connecter →'; btn.disabled = false;
+        return;
+    }
+
+    if (data.session) {
+        const { access_token, refresh_token } = data.session;
+        window.location.href = `https://spotmycar.pages.dev/?access_token=${access_token}&refresh_token=${refresh_token}&type=magiclink`;
+    }
+}
+    async function handleRegister(event) {
+    event.preventDefault();
+    const btn = document.getElementById('register-btn');
+    btn.textContent = 'Création...'; btn.disabled = true;
+    hideMessages();
+
+    const email = document.getElementById('register-email').value;
+    const password = document.getElementById('register-password').value;
+
+    const { data, error } = await supabase.auth.signUp({ email, password });
+
+    if (error) {
+        showError(error.message);
+        btn.textContent = 'Créer mon compte →'; btn.disabled = false;
+        return;
+    }
+
+    // Si confirmation email désactivée dans Supabase → session directe
+    if (data.session) {
+        const { access_token, refresh_token } = data.session;
+        window.location.href = `https://spotmycar.pages.dev/?access_token=${access_token}&refresh_token=${refresh_token}&type=magiclink`;
+    } else {
+        // Confirmation email activée → affiche message
+        showSuccess('Vérifiez votre email pour confirmer votre compte.');
+        btn.textContent = 'Créer mon compte →'; btn.disabled = false;
+    }
+}
     document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ window.closeAuthModal(); closeLightbox(); } });
 })();
 
