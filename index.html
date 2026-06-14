@@ -566,6 +566,7 @@
         var email    = document.getElementById('login-email').value;
         var password = document.getElementById('login-password').value;
         var res = await sb.auth.signInWithPassword({ email: email, password: password });
+        console.log('DEBUG session:', res.data?.session, 'user:', res.data?.user);
         if (res.error) {
             showErr(res.error.message);
             if(btn){ btn.textContent='Se connecter →'; btn.disabled=false; }
