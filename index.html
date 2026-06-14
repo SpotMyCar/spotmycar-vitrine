@@ -518,90 +518,6 @@
 <!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
-var T = {
-  fr: {
-    "nav.features":"Fonctionnalités","nav.preview":"Aperçu","nav.pricing":"Tarifs","nav.login":"Se connecter","nav.cta":"Commencer →",
-    "hero.badge":"Accès ouvert · Région Sud-Est",
-    "hero.title":"Moins de recherche.<br><span class=\"text-gradient\">Plus de marge.</span>",
-    "hero.desc":"SpotMyCar agrège les annonces de plusieurs plateformes, les analyse avec un score IA et vous remonte uniquement les <strong class=\"text-white\">opportunités rentables</strong> — en temps réel.",
-    "hero.stat1":"sources agrégées","hero.stat2":"marge moy. détectée","hero.stat3":"nouvelles annonces/jour",
-    "hero.cta":"Accéder à SpotMyCar","hero.see":"Voir l'outil","mock.title":"Annonces du jour",
-    "strip.s1":"annonces analysées/jour","strip.s2":"sources en temps réel","strip.s3":"marge moy. détectée","strip.s4":"sur chaque annonce",
-    "feat.badge":"Fonctionnalités","feat.title":"Un analyste virtuel qui tourne 24h/24","feat.sub":"Pendant que vous dormez, SpotMyCar scrute les plateformes et identifie les pépites.",
-    "feat.f1t":"Agrégation multi-sources","feat.f1d":"3 plateformes surveillées en continu. Toutes les annonces en un seul tableau de bord, sans aller-retour entre les sites.",
-    "feat.f2t":"Score IA /10","feat.f2d":"Chaque annonce reçoit un score calculé sur le prix, le kilométrage, l'année et le marché local.",
-    "feat.f3t":"Estimation de marge réelle","feat.f3d":"Colonne MARGE € calculée en temps réel. Vous savez exactement combien vous pouvez gagner avant d'appeler.",
-    "feat.f4t":"Matrice KM / Prix","feat.f4d":"Visualisez les annonces sur un graphique prix vs kilométrage. Les points verts sous la courbe = bonnes affaires.",
-    "feat.f5t":"Alertes sourcing","feat.f5d":"Configurez vos critères et recevez une notification dès qu'une opportunité correspond. Zéro bruit.",
-    "feat.f6t":"Filtres pro avancés","feat.f6d":"Prix, KM, année, marque, modèle, génération, carburant, source. Filtrage P95 automatique.",
-    "sc.badge":"Aperçu du produit","sc.title":"Conçu pour décider vite","sc.sub":"Un dashboard dense en information, zéro superflu.",
-    "sc.s1badge":"Recherche & Filtres","sc.s1title":"Toutes les annonces. Un seul endroit.","sc.s1desc":"Le tableau agrège les annonces en temps réel. Triez par score IA, marge ou prix.",
-    "sc.s1l1":"Score IA de 0 à 10 sur chaque annonce","sc.s1l2":"Marge estimée calculée automatiquement","sc.s1l3":"Filtrage par source, génération, carburant",
-    "sc.s2badge":"Tableau de bord","sc.s2title":"La matrice KM/Prix qui révèle tout.","sc.s2desc":"Les points verts sous la courbe de régression = annonces sous-cotées = opportunités réelles.",
-    "sc.s2l1":"Courbe de régression du marché en temps réel","sc.s2l2":"Répartition des sources (Donut chart)","sc.s2l3":"Prix médian par modèle et distribution KM",
-    "sc.s3badge":"Alertes Sourcing","sc.s3title":"Soyez le premier à appeler.","sc.s3desc":"SpotMyCar vous notifie dès qu'une annonce correspond à vos critères. Vous appelez avant tout le monde.",
-    "sc.s3l1":"Critères personnalisés par alerte","sc.s3l2":"Plusieurs alertes simultanées","sc.s3l3":"Notification instantanée in-app",
-    "pr.badge":"Tarifs","pr.title":"Un abonnement. Toutes les fonctionnalités.","pr.sub":"Sans engagement. Annulable à tout moment.",
-    "pr.regional":"Régional","pr.coverage":"Couverture locale · Sud-Est","pr.nocommit":"Sans engagement · Résiliation en 1 clic","pr.cta":"Commencer maintenant →",
-    "pr.f1":"Agrégation <strong class=\"text-white\">3 sources</strong> en temps réel","pr.f2":"Score IA /10 sur chaque annonce","pr.f3":"Estimation de marge réelle automatique",
-    "pr.f4":"Matrice KM/Prix interactive","pr.f5":"Alertes sourcing illimitées","pr.f6":"Filtres avancés (modèle, génération, source...)","pr.f7":"Accès web · desktop & mobile",
-    "pr.retract":"Droit de rétractation 14 jours — remboursement intégral garanti.",
-    "pr.soon":"Bientôt disponible","pr.national":"National","pr.natcoverage":"Couverture France entière","pr.tbd":"Tarif en cours de définition","pr.comingsoon":"Disponible prochainement",
-    "pr.n1":"Tout le plan Régional","pr.n2":"Couverture nationale · toutes régions","pr.n3":"7+ sources agrégées",
-    "cta.title":"Détectez la pépite.<br><span class=\"text-gradient\">Avant tout le monde.</span>",
-    "cta.sub":"Rejoignez SpotMyCar et transformez votre sourcing en avantage concurrentiel durable.",
-    "cta.cta":"Commencer — 49€/mois","cta.login":"J'ai déjà un compte","cta.legal":"Sans engagement · Rétractation 14 jours · Résiliation en 1 clic",
-    "pepite.label":"Projet soutenu par","pepite.desc":"Programme national d'entrepreneuriat étudiant","footer.legal":"Mentions légales"
-  },
-  en: {
-    "nav.features":"Features","nav.preview":"Preview","nav.pricing":"Pricing","nav.login":"Sign in","nav.cta":"Get started →",
-    "hero.badge":"Open access · South-East Region",
-    "hero.title":"Less searching.<br><span class=\"text-gradient\">More margin.</span>",
-    "hero.desc":"SpotMyCar aggregates listings from multiple platforms, analyzes them with an AI score and surfaces only <strong class=\"text-white\">profitable opportunities</strong> — in real time.",
-    "hero.stat1":"aggregated sources","hero.stat2":"avg. margin detected","hero.stat3":"new listings/day",
-    "hero.cta":"Access SpotMyCar","hero.see":"See the tool","mock.title":"Today's listings",
-    "strip.s1":"listings analyzed/day","strip.s2":"real-time sources","strip.s3":"avg. margin detected","strip.s4":"on every listing",
-    "feat.badge":"Features","feat.title":"A virtual analyst running 24/7","feat.sub":"While you sleep, SpotMyCar scans platforms and identifies hidden gems.",
-    "feat.f1t":"Multi-source aggregation","feat.f1d":"3 platforms monitored continuously. All listings in one dashboard, no more tab switching.",
-    "feat.f2t":"AI Score /10","feat.f2d":"Every listing gets a score based on price, mileage, year and local market. No more guessing.",
-    "feat.f3t":"Real margin estimate","feat.f3d":"MARGIN € column calculated in real time. You know exactly how much you can make before calling.",
-    "feat.f4t":"KM / Price Matrix","feat.f4d":"Visualize listings on a price vs mileage chart. Green dots below the curve = underpriced = real opportunities.",
-    "feat.f5t":"Sourcing alerts","feat.f5d":"Set your criteria and get notified the moment a match appears. Zero noise.",
-    "feat.f6t":"Advanced pro filters","feat.f6d":"Price, KM, year, brand, model, generation, fuel, source. P95 filtering removes outliers automatically.",
-    "sc.badge":"Product preview","sc.title":"Built to decide fast","sc.sub":"Information-dense dashboard, zero clutter.",
-    "sc.s1badge":"Search & Filters","sc.s1title":"All listings. One place.","sc.s1desc":"The table aggregates listings in real time. Sort by AI score, margin or price.",
-    "sc.s1l1":"AI score 0 to 10 on every listing","sc.s1l2":"Estimated margin calculated automatically","sc.s1l3":"Filter by source, generation, fuel type",
-    "sc.s2badge":"Dashboard","sc.s2title":"The KM/Price matrix that reveals all.","sc.s2desc":"Green dots below the regression curve = underpriced listings = real opportunities.",
-    "sc.s2l1":"Market regression curve in real time","sc.s2l2":"Source breakdown (Donut chart)","sc.s2l3":"Median price by model and KM distribution",
-    "sc.s3badge":"Sourcing Alerts","sc.s3title":"Be the first to call.","sc.s3desc":"SpotMyCar notifies you the moment a listing matches your criteria. You call before anyone else.",
-    "sc.s3l1":"Custom criteria per alert","sc.s3l2":"Multiple simultaneous alerts","sc.s3l3":"Instant in-app notification",
-    "pr.badge":"Pricing","pr.title":"One subscription. All features.","pr.sub":"No commitment. Cancel anytime.",
-    "pr.regional":"Regional","pr.coverage":"Local coverage · South-East","pr.nocommit":"No commitment · Cancel in 1 click","pr.cta":"Start now →",
-    "pr.f1":"<strong class=\"text-white\">3 sources</strong> aggregated in real time","pr.f2":"AI score /10 on every listing","pr.f3":"Automatic real margin estimate",
-    "pr.f4":"Interactive KM/Price matrix","pr.f5":"Unlimited sourcing alerts","pr.f6":"Advanced filters (model, generation, source...)","pr.f7":"Web access · desktop & mobile",
-    "pr.retract":"14-day withdrawal right — full refund guaranteed.",
-    "pr.soon":"Coming soon","pr.national":"National","pr.natcoverage":"Full France coverage","pr.tbd":"Pricing to be announced","pr.comingsoon":"Coming soon",
-    "pr.n1":"Everything in Regional","pr.n2":"National coverage · all regions","pr.n3":"7+ aggregated sources",
-    "cta.title":"Spot the gem.<br><span class=\"text-gradient\">Before anyone else.</span>",
-    "cta.sub":"Join SpotMyCar and turn your sourcing into a lasting competitive edge.",
-    "cta.cta":"Start — €49/month","cta.login":"I already have an account","cta.legal":"No commitment · 14-day withdrawal · Cancel in 1 click",
-    "pepite.label":"Project supported by","pepite.desc":"National student entrepreneurship program","footer.legal":"Legal notice"
-  }
-};
-
-var currentLang = 'fr';
-window.setLang = function(lang) {
-    currentLang = lang;
-    var t = T[lang];
-    document.querySelectorAll('[data-i18n]').forEach(function(el) {
-        var key = el.getAttribute('data-i18n');
-        if (t[key] !== undefined) el.innerHTML = t[key];
-    });
-    ['btn-fr','btn-fr-m'].forEach(function(id){ var b=document.getElementById(id); if(b) b.className='lang-btn'+(lang==='fr'?' active':''); });
-    ['btn-en','btn-en-m'].forEach(function(id){ var b=document.getElementById(id); if(b) b.className='lang-btn'+(lang==='en'?' active':''); });
-    document.documentElement.lang = lang;
-};
-
 (function() {
     var sb = supabase.createClient(
         'https://lrlskgxzrkjotcxevzag.supabase.co',
@@ -609,90 +525,125 @@ window.setLang = function(lang) {
     );
     var APP_URL = 'https://spotmycar.pages.dev/';
 
-    window.openAuthModal  = function(tab) { document.getElementById('auth-modal').classList.remove('hidden'); switchAuthTab(tab||'login'); clearMsg(); };
-    window.closeAuthModal = function()    { document.getElementById('auth-modal').classList.add('hidden'); clearMsg(); };
-    window.switchAuthTab  = function(tab) {
-        var isLogin = tab==='login';
-        document.getElementById('form-login').classList.toggle('hidden',!isLogin);
-        document.getElementById('form-register').classList.toggle('hidden',isLogin);
-        document.getElementById('tab-login').style.cssText    = isLogin  ? 'background:#00E676;color:#0A192F' : 'background:transparent;color:#A8B2D1';
-        document.getElementById('tab-register').style.cssText = !isLogin ? 'background:#00E676;color:#0A192F' : 'background:transparent;color:#A8B2D1';
+    function clearMsg(){ ['auth-error','auth-success'].forEach(function(id){ var el=document.getElementById(id); if(el) el.classList.add('hidden'); }); }
+    function showErr(m){ var e=document.getElementById('auth-error'); if(e){ e.textContent=m; e.classList.remove('hidden'); } }
+    function showOk(m) { var e=document.getElementById('auth-success'); if(e){ e.textContent=m; e.classList.remove('hidden'); } }
+
+    window.openAuthModal = function(tab) {
+        var modal = document.getElementById('auth-modal');
+        if(modal) modal.classList.remove('hidden');
+        window.switchAuthTab(tab||'login');
         clearMsg();
     };
-    function clearMsg(){ ['auth-error','auth-success'].forEach(function(id){ document.getElementById(id).classList.add('hidden'); }); }
-    function showErr(m){ var e=document.getElementById('auth-error'); e.textContent=m; e.classList.remove('hidden'); }
-    function showOk(m) { var e=document.getElementById('auth-success'); e.textContent=m; e.classList.remove('hidden'); }
+    window.closeAuthModal = function() {
+        var modal = document.getElementById('auth-modal');
+        if(modal) modal.classList.add('hidden');
+        clearMsg();
+    };
+    window.switchAuthTab = function(tab) {
+        var isLogin = tab==='login';
+        var fl = document.getElementById('form-login');
+        var fr = document.getElementById('form-register');
+        var tl = document.getElementById('tab-login');
+        var tr = document.getElementById('tab-register');
+        if(fl) fl.classList.toggle('hidden', !isLogin);
+        if(fr) fr.classList.toggle('hidden', isLogin);
+        if(tl) tl.style.cssText = isLogin  ? 'background:#00E676;color:#0A192F' : 'background:transparent;color:#A8B2D1';
+        if(tr) tr.style.cssText = !isLogin ? 'background:#00E676;color:#0A192F' : 'background:transparent;color:#A8B2D1';
+        clearMsg();
+    };
 
     window.handleGoogleAuth = async function() {
         var r = await sb.auth.signInWithOAuth({ provider:'google', options:{ redirectTo: APP_URL } });
         if (r.error) showErr('Erreur Google : '+r.error.message);
     };
-    async function handleLogin(event) {
-    event.preventDefault();
-    const btn = document.getElementById('login-btn');
-    btn.textContent = 'Connexion...'; btn.disabled = true;
-    hideMessages();
 
-    const email = document.getElementById('login-email').value;
-    const password = document.getElementById('login-password').value;
+    window.handleLogin = async function(event) {
+        event.preventDefault();
+        var btn = document.getElementById('login-btn');
+        if(btn){ btn.textContent='Connexion...'; btn.disabled=true; }
+        clearMsg();
+        var email    = document.getElementById('login-email').value;
+        var password = document.getElementById('login-password').value;
+        var res = await sb.auth.signInWithPassword({ email: email, password: password });
+        if (res.error) {
+            showErr(res.error.message);
+            if(btn){ btn.textContent='Se connecter →'; btn.disabled=false; }
+            return;
+        }
+        if (res.data && res.data.session) {
+            window.location.href = APP_URL
+                + '?access_token='  + res.data.session.access_token
+                + '&refresh_token=' + res.data.session.refresh_token
+                + '&type=magiclink';
+        }
+    };
 
-    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+    window.handleRegister = async function(event) {
+        event.preventDefault();
+        var btn = document.getElementById('register-btn');
+        if(btn){ btn.textContent='Création...'; btn.disabled=true; }
+        clearMsg();
+        var email    = document.getElementById('register-email').value;
+        var password = document.getElementById('register-password').value;
+        var res = await sb.auth.signUp({ email: email, password: password });
+        if (res.error) {
+            showErr(res.error.message);
+            if(btn){ btn.textContent='Créer mon compte →'; btn.disabled=false; }
+            return;
+        }
+        if (res.data && res.data.session) {
+            window.location.href = APP_URL
+                + '?access_token='  + res.data.session.access_token
+                + '&refresh_token=' + res.data.session.refresh_token
+                + '&type=magiclink';
+        } else {
+            showOk('Vérifiez votre email pour confirmer votre compte.');
+            if(btn){ btn.textContent='Créer mon compte →'; btn.disabled=false; }
+        }
+    };
 
-    console.log('LOGIN data:', JSON.stringify(data));
-    console.log('LOGIN error:', JSON.stringify(error));
+    window.closeLightbox = function() {
+        var lb = document.getElementById('lightbox');
+        if(lb) lb.classList.remove('open');
+    };
 
-    if (error) {
-        showError(error.message);
-        btn.textContent = 'Se connecter →'; btn.disabled = false;
-        return;
-    }
-
-    if (data.session) {
-        const { access_token, refresh_token } = data.session;
-        window.location.href = `https://spotmycar.pages.dev/?access_token=${access_token}&refresh_token=${refresh_token}&type=magiclink`;
-    }
-}
-    async function handleRegister(event) {
-    event.preventDefault();
-    const btn = document.getElementById('register-btn');
-    btn.textContent = 'Création...'; btn.disabled = true;
-    hideMessages();
-
-    const email = document.getElementById('register-email').value;
-    const password = document.getElementById('register-password').value;
-
-    const { data, error } = await supabase.auth.signUp({ email, password });
-
-    if (error) {
-        showError(error.message);
-        btn.textContent = 'Créer mon compte →'; btn.disabled = false;
-        return;
-    }
-
-    // Si confirmation email désactivée dans Supabase → session directe
-    if (data.session) {
-        const { access_token, refresh_token } = data.session;
-        window.location.href = `https://spotmycar.pages.dev/?access_token=${access_token}&refresh_token=${refresh_token}&type=magiclink`;
-    } else {
-        // Confirmation email activée → affiche message
-        showSuccess('Vérifiez votre email pour confirmer votre compte.');
-        btn.textContent = 'Créer mon compte →'; btn.disabled = false;
-    }
-}
-    document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ window.closeAuthModal(); closeLightbox(); } });
-})();
-
-window.closeLightbox = function() { document.getElementById('lightbox').classList.remove('open'); };
-
-document.addEventListener('DOMContentLoaded', function() {
-    var btn=document.getElementById('mobile-menu-btn'), menu=document.getElementById('mobile-menu');
-    if(btn&&menu) btn.addEventListener('click',function(){ menu.classList.toggle('hidden'); });
-    var observer=new IntersectionObserver(function(entries){ entries.forEach(function(entry){ if(entry.isIntersecting) entry.target.classList.add('visible'); }); },{threshold:0.1});
-    document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
-    document.querySelectorAll('.screenshot-img').forEach(function(img){
-        img.addEventListener('click',function(e){ e.stopPropagation(); document.getElementById('lightbox-img').src=img.src; document.getElementById('lightbox').classList.add('open'); });
+    document.addEventListener('keydown', function(e){
+        if(e.key==='Escape'){ window.closeAuthModal(); window.closeLightbox(); }
     });
-});
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Mobile menu
+        var mbtn = document.getElementById('mobile-menu-btn');
+        var menu = document.getElementById('mobile-menu');
+        if(mbtn && menu) mbtn.addEventListener('click', function(){ menu.classList.toggle('hidden'); });
+
+        // Attache les forms par listener (plus fiable que onsubmit inline)
+        var fl = document.getElementById('form-login');
+        var fr = document.getElementById('form-register');
+        if(fl) fl.addEventListener('submit', window.handleLogin);
+        if(fr) fr.addEventListener('submit', window.handleRegister);
+
+        // Scroll reveal
+        var observer = new IntersectionObserver(function(entries){
+            entries.forEach(function(entry){ if(entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, {threshold:0.1});
+        document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
+
+        // Lightbox
+        document.querySelectorAll('.screenshot-img').forEach(function(img){
+            img.addEventListener('click', function(e){
+                e.stopPropagation();
+                var lbi = document.getElementById('lightbox-img');
+                var lb  = document.getElementById('lightbox');
+                if(lbi) lbi.src = img.src;
+                if(lb)  lb.classList.add('open');
+            });
+        });
+    });
+})();
 </script>
+</body>
+</html>
 </body>
 </html>
