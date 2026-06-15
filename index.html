@@ -519,11 +519,9 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
 (function() {
-    var sb = supabase.createClient(
-        'https://lrlskgxzrkjotcxevzag.supabase.co',
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxybHNrZ3h6cmtqb3RjeGV2emFnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ0NzA3NjEsImV4cCI6MjA5MDA0Njc2MX0.IUPPMuth6KH1_wty_qEohsfjHFqomL_Gth-lw_Ju5dc',
-        { auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false } }
-    );
+    var sb = supabase.createClient('https://lrlskgxzrkjotcxevzag.supabase.co', 'eyJ...', {
+    auth: { persistSession: true, autoRefreshToken: false, detectSessionInUrl: false }
+});
     var APP_URL = 'https://spotmycar.pages.dev/';
     function clearMsg(){ ['auth-error','auth-success'].forEach(function(id){ var el=document.getElementById(id); if(el) el.classList.add('hidden'); }); }
     function showErr(m){ var e=document.getElementById('auth-error'); if(e){ e.textContent=m; e.classList.remove('hidden'); } }
