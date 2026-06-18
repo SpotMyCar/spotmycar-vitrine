@@ -571,10 +571,7 @@
             return;
         }
         if (res.data && res.data.session) {
-            window.location.href = APP_URL
-                + '?access_token='  + res.data.session.access_token
-                + '&refresh_token=' + res.data.session.refresh_token
-                + '&type=magiclink';
+            window.location.href = APP_URL;
         }
     };
 
@@ -592,10 +589,7 @@
             return;
         }
         if (res.data && res.data.session) {
-            window.location.href = APP_URL
-                + '?access_token='  + res.data.session.access_token
-                + '&refresh_token=' + res.data.session.refresh_token
-                + '&type=magiclink';
+            window.location.href = APP_URL;
         } else {
             showOk('Vérifiez votre email pour confirmer votre compte.');
             if(btn){ btn.textContent='Créer mon compte →'; btn.disabled=false; }
